@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investir · Value Hunter</title>
+  <meta name="description" content="Des biens rénovés, prêts à louer, et des immeubles de rapport en Île-de-France, présentés avec leurs chiffres.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Investir · Value Hunter">
+  <meta property="og:description" content="Des biens rénovés, prêts à louer, et des immeubles de rapport en Île-de-France, présentés avec leurs chiffres.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&text=VALUEHNTR%20&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/v4.css">
+  <link rel="stylesheet" href="assets/css/v4-pages.css">
+  <script>document.documentElement.classList.add("avec-js")</script>
+</head>
+<body data-page="investir">
+
+<main>
+
+  <section class="hero hero--page">
+    <span class="hero__etiquette entre">Investissement locatif</span>
+    <h1 class="entre">Investir</h1>
+    <p class="entre">Rénové. Loué ou prêt à l'être. Chiffré.</p>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete revele"><h2>Trois types de biens</h2></div>
+      <div class="entrees">
+        <div class="entree revele">
+          <span class="entree__num">01</span>
+          <h3>Rénové, prêt à louer</h3>
+          <p>Travaux faits.</p>
+        </div>
+        <div class="entree revele" style="--delai:.1s">
+          <span class="entree__num">02</span>
+          <h3>Immeuble de rapport</h3>
+          <p>Plusieurs logements, une seule acquisition.</p>
+        </div>
+        <div class="entree revele" style="--delai:.2s">
+          <span class="entree__num">03</span>
+          <h3>À rénover</h3>
+          <p>Un prix d'entrée plus bas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--douce">
+    <div class="conteneur duo">
+      <div class="revele">
+        <h2>Le dossier investisseur</h2>
+        <p class="chapo">Un dossier chiffré pour chaque bien, sur demande.</p>
+      </div>
+      <ul class="liste revele" style="--delai:.1s">
+        <li>Prix et frais d'acquisition</li>
+        <li>Loyers en place ou loyers de marché</li>
+        <li>Charges et taxe foncière</li>
+        <li>Travaux réalisés ou à prévoir</li>
+        <li>Rendement brut</li>
+        <li>Diagnostics</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete revele"><h2>Calculez un rendement brut</h2></div>
+      <div class="simulateur revele" data-simulateur>
+        <div class="formulaire">
+          <div class="champ"><label for="s-prix">Prix d'achat (€)</label><input id="s-prix" name="prix" type="text" inputmode="numeric" value="180 000" autocomplete="off"></div>
+          <div class="champ"><label for="s-travaux">Travaux (€)</label><input id="s-travaux" name="travaux" type="text" inputmode="numeric" value="0" autocomplete="off"></div>
+          <div class="champ"><label for="s-loyer">Loyer mensuel (€)</label><input id="s-loyer" name="loyer" type="text" inputmode="numeric" value="1 000" autocomplete="off"></div>
+        </div>
+        <div aria-live="polite">
+          <span class="simulateur__etiquette">Rendement brut</span>
+          <output class="simulateur__valeur" data-resultat>—</output>
+          <p class="simulateur__mention">Calcul indicatif&nbsp;: loyer annuel divisé par le prix et les travaux. Hors frais d'acquisition, charges, fiscalité et vacance locative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--serree">
+    <div class="conteneur">
+      <div class="tete revele">
+        <h2>Biens pour investir</h2>
+        <a class="bouton bouton--violet" href="biens.html?filtre=investisseur">Tous les biens</a>
+      </div>
+      <div class="biens" data-biens data-investisseur></div>
+    </div>
+  </section>
+
+  <section class="appel">
+    <div class="conteneur revele">
+      <h2>Un projet d'investissement&nbsp;?</h2>
+      <p>Acheter, investir ou vendre à Paris et en Île-de-France.</p>
+      <a class="bouton bouton--blanc bouton--grand" href="contact.html">Nous contacter</a>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/biens.js"></script>
+<script src="assets/js/v4.js"></script>
+</body>
+</html>

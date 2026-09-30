@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Value Hunter</title>
+  <meta name="description" content="Contactez Value Hunter pour un achat, un investissement ou une vente à Paris et en Île-de-France.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact · Value Hunter">
+  <meta property="og:description" content="Contactez Value Hunter pour un achat, un investissement ou une vente à Paris et en Île-de-France.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&text=VALUEHNTR%20&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/v4.css">
+  <link rel="stylesheet" href="assets/css/v4-pages.css">
+  <script>document.documentElement.classList.add("avec-js")</script>
+</head>
+<body data-page="contact">
+
+<main>
+
+  <section class="hero hero--page">
+    <span class="hero__etiquette entre">Par téléphone ou en visio</span>
+    <h1 class="entre">Contact</h1>
+    <p class="entre">Dites-nous ce que vous cherchez.</p>
+  </section>
+
+  <section class="section">
+    <div class="conteneur" style="max-width:860px">
+      <form class="formulaire revele" data-formulaire="Contact">
+        <fieldset class="champ">
+          <legend>Votre projet</legend>
+          <div class="choix">
+            <label><input type="radio" name="Votre projet" value="Acheter" checked>Acheter</label>
+            <label><input type="radio" name="Votre projet" value="Investir">Investir</label>
+            <label><input type="radio" name="Votre projet" value="Vendre">Vendre</label>
+            <label><input type="radio" name="Votre projet" value="Autre">Autre</label>
+          </div>
+        </fieldset>
+        <div class="champ" data-champ-bien hidden><label for="c-bien">Bien concerné</label><input id="c-bien" name="Bien" type="text" readonly></div>
+        <div class="champ"><label for="c-nom">Nom</label><input id="c-nom" name="Nom" type="text" autocomplete="name" required></div>
+        <div class="formulaire__rang">
+          <div class="champ"><label for="c-tel">Téléphone</label><input id="c-tel" name="Téléphone" type="tel" autocomplete="tel" required></div>
+          <div class="champ"><label for="c-email">E-mail</label><input id="c-email" name="E-mail" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="champ"><label for="c-message">Message (facultatif)</label><textarea id="c-message" name="Message"></textarea></div>
+        <label class="consentement">
+          <input type="checkbox" name="consentement" required>
+          <span>J'accepte d'être recontacté au sujet de ma demande.</span>
+        </label>
+        <button class="bouton bouton--violet bouton--grand" type="submit">Envoyer ma demande</button>
+        <p class="formulaire__retour" role="status">Votre messagerie s'ouvre pour envoyer la demande.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/biens.js"></script>
+<script src="assets/js/v4.js"></script>
+</body>
+</html>

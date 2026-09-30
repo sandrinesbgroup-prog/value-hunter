@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Value Hunter · Agence immobilière · Paris &amp; Île-de-France</title>
+  <meta name="description" content="Value Hunter, agence immobilière : acheter, investir, vendre à Paris et en Île-de-France.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Value Hunter · Agence immobilière · Paris &amp; Île-de-France">
+  <meta property="og:description" content="Value Hunter, agence immobilière : acheter, investir, vendre à Paris et en Île-de-France.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&text=VALUEHNTR%20&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/v4.css">
+  <link rel="stylesheet" href="assets/css/v4-pages.css">
+  <script>document.documentElement.classList.add("avec-js")</script>
+</head>
+<body data-page="accueil">
+
+<main>
+
+  <!-- Haut de page&nbsp;: vue aérienne de la Seine et de Paris, en boucle, teintée en violet.
+       Source : Pexels (licence libre). Deux définitions dans assets/video/ ; la haute définition est chargée sur grand écran. -->
+  <section class="hero">
+    <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" src="assets/video/seine-720.mp4" data-hd="assets/video/seine-1080.mp4"></video>
+    <span class="hero__etiquette entre">Agence immobilière · Paris &amp; Île-de-France</span>
+    <h1 class="entre" aria-label="Acheter, investir, vendre en Île-de-France."><span class="mots" aria-hidden="true"><span>Acheter</span><span>Investir</span><span>Vendre</span><span>Acheter</span></span><span class="nb" aria-hidden="true">en Île-de-France.</span></h1>
+    <p class="entre">Appartements, maisons et immeubles à Paris et <span class="nb">en Île-de-France.</span></p>
+    <div class="onglets entre">
+      <a href="biens.html">Acheter</a>
+      <a href="investir.html">Investir</a>
+      <a href="vendre.html">Vendre</a>
+    </div>
+    <span class="hero__suite" aria-hidden="true"></span>
+  </section>
+
+  <div class="defile" aria-hidden="true"><div class="defile__piste" data-defile></div></div>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="tete revele">
+        <h2>Les biens du moment</h2>
+        <a class="bouton bouton--violet" href="biens.html">Tous les biens</a>
+      </div>
+      <div class="biens" data-biens data-limite="3"></div>
+    </div>
+  </section>
+
+  <section class="section section--serree">
+    <div class="conteneur">
+      <div class="entrees">
+        <a class="entree revele" href="biens.html">
+          <span class="entree__num">01</span>
+          <h3>Acheter</h3>
+          <p>On cherche, on négocie, vous emménagez.</p>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
+        <a class="entree revele" href="investir.html" style="--delai:.1s">
+          <span class="entree__num">02</span>
+          <h3>Investir</h3>
+          <p>Rénové. Loué ou prêt à l'être. Chiffré.</p>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
+        <a class="entree revele" href="vendre.html" style="--delai:.2s">
+          <span class="entree__num">03</span>
+          <h3>Vendre</h3>
+          <p>On estime, on vend, vous signez.</p>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="appel">
+    <div class="conteneur revele">
+      <h2>Un projet immobilier&nbsp;?</h2>
+      <p>Acheter, investir ou vendre à Paris et en Île-de-France.</p>
+      <a class="bouton bouton--blanc bouton--grand" href="contact.html">Nous contacter</a>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/biens.js"></script>
+<script src="assets/js/v4.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendre · Value Hunter</title>
+  <meta name="description" content="Faites estimer votre bien par Value Hunter, à Paris et en Île-de-France.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vendre · Value Hunter">
+  <meta property="og:description" content="Faites estimer votre bien par Value Hunter, à Paris et en Île-de-France.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&text=VALUEHNTR%20&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/v4.css">
+  <link rel="stylesheet" href="assets/css/v4-pages.css">
+  <script>document.documentElement.classList.add("avec-js")</script>
+</head>
+<body data-page="vendre">
+
+<main>
+
+  <section class="hero hero--page">
+    <span class="hero__etiquette entre">Estimation et vente</span>
+    <h1 class="entre">Vendre</h1>
+    <p class="entre">On estime, on vend, vous signez.</p>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <div class="etapes revele">
+        <div class="etape"><h3>Estimation</h3><p>Une visite, un prix.</p></div>
+        <div class="etape"><h3>Mise en vente</h3><p>Photos, annonce, visites.</p></div>
+        <div class="etape"><h3>Signature</h3><p>Chez le notaire.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--douce" id="estimation">
+    <div class="conteneur duo">
+      <div class="revele">
+        <h2>Faire estimer mon bien</h2>
+        <p class="chapo">Quelques informations suffisent.</p>
+      </div>
+      <form class="formulaire revele" style="--delai:.1s" data-formulaire="Demande d'estimation">
+        <fieldset class="champ">
+          <legend>Type de bien</legend>
+          <div class="choix">
+            <label><input type="radio" name="Type de bien" value="Appartement" checked>Appartement</label>
+            <label><input type="radio" name="Type de bien" value="Maison">Maison</label>
+            <label><input type="radio" name="Type de bien" value="Immeuble">Immeuble</label>
+            <label><input type="radio" name="Type de bien" value="Autre">Autre</label>
+          </div>
+        </fieldset>
+        <div class="formulaire__rang">
+          <div class="champ"><label for="e-ville">Ville ou adresse</label><input id="e-ville" name="Ville ou adresse" type="text" required></div>
+          <div class="champ"><label for="e-surface">Surface (m²)</label><input id="e-surface" name="Surface" type="text" inputmode="numeric"></div>
+        </div>
+        <div class="formulaire__rang">
+          <div class="champ"><label for="e-nom">Nom</label><input id="e-nom" name="Nom" type="text" autocomplete="name" required></div>
+          <div class="champ"><label for="e-tel">Téléphone</label><input id="e-tel" name="Téléphone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="champ"><label for="e-email">E-mail</label><input id="e-email" name="E-mail" type="email" autocomplete="email" required></div>
+        <label class="consentement">
+          <input type="checkbox" name="consentement" required>
+          <span>J'accepte d'être recontacté au sujet de mon bien.</span>
+        </label>
+        <button class="bouton bouton--violet bouton--grand" type="submit">Envoyer ma demande</button>
+        <p class="formulaire__retour" role="status">Votre messagerie s'ouvre pour envoyer la demande.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/biens.js"></script>
+<script src="assets/js/v4.js"></script>
+</body>
+</html>
