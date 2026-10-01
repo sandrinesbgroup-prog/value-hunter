@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jost&text=VALUEHNTR%20&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/v4.css?v=202610011347">
-  <link rel="stylesheet" href="assets/css/v4-pages.css?v=202610011347">
+  <link rel="stylesheet" href="assets/css/v4.css?v=202610011352">
+  <link rel="stylesheet" href="assets/css/v4-pages.css?v=202610011352">
   <script>document.documentElement.classList.add("avec-js")</script>
 </head>
 <body data-page="investir">
@@ -28,12 +28,33 @@
     <p class="entre">Rénové. Loué ou prêt à l'être. Chiffré.</p>
     <div class="hero__actions entre">
       <a class="bouton bouton--blanc bouton--grand" href="#biens">Voir les biens</a>
-      <a class="bouton bouton--contour bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander un dossier</a>
+      <a class="bouton bouton--contour bouton--grand" href="#dossier">Le dossier investisseur</a>
+    </div>
+  </section>
+
+  <!-- Le dossier investisseur, en encadré compact juste sous le bandeau : visible dès l'arrivée -->
+  <section class="section section--chevauche" id="dossier">
+    <div class="conteneur">
+      <div class="dossier-carte revele">
+        <div class="dossier-carte__tete">
+          <h2>Le dossier investisseur</h2>
+          <p>Un dossier chiffré pour chaque bien, sur demande.</p>
+        </div>
+        <ul class="dossier-carte__liste">
+          <li>Prix et frais d'acquisition</li>
+          <li>Loyers en place ou loyers de marché</li>
+          <li>Charges et taxe foncière</li>
+          <li>Travaux réalisés ou à prévoir</li>
+          <li>Rendement brut</li>
+          <li>Diagnostics</li>
+        </ul>
+        <a class="bouton bouton--blanc bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander le dossier</a>
+      </div>
     </div>
   </section>
 
   <!-- Les trois types, en cartes claires cliquables (même style que la page L'agence) -->
-  <section class="section section--chevauche">
+  <section class="section section--serree">
     <div class="conteneur">
       <div class="entrees">
         <a class="entree entree--question revele" href="biens.html?filtre=Rénové">
@@ -52,27 +73,6 @@
           <span class="entree__fleche" aria-hidden="true">→</span>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Le dossier investisseur : bandeau sombre, six éléments en tuiles, et la demande -->
-  <section class="section dossier" id="dossier">
-    <div class="conteneur">
-      <div class="dossier__tete revele">
-        <div>
-          <h2>Le dossier investisseur</h2>
-          <p class="chapo">Un dossier chiffré pour chaque bien, sur demande.</p>
-        </div>
-        <a class="bouton bouton--blanc bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander le dossier</a>
-      </div>
-      <ol class="dossier__tuiles">
-        <li class="revele"><span>01</span>Prix et frais d'acquisition</li>
-        <li class="revele" style="--delai:.05s"><span>02</span>Loyers en place ou loyers de marché</li>
-        <li class="revele" style="--delai:.1s"><span>03</span>Charges et taxe foncière</li>
-        <li class="revele" style="--delai:.15s"><span>04</span>Travaux réalisés ou à prévoir</li>
-        <li class="revele" style="--delai:.2s"><span>05</span>Rendement brut</li>
-        <li class="revele" style="--delai:.25s"><span>06</span>Diagnostics</li>
-      </ol>
     </div>
   </section>
 
@@ -114,7 +114,7 @@
   </section>
 </main>
 
-<script src="assets/js/biens.js?v=202610011347"></script>
-<script src="assets/js/v4.js?v=202610011347"></script>
+<script src="assets/js/biens.js?v=202610011352"></script>
+<script src="assets/js/v4.js?v=202610011352"></script>
 </body>
 </html>
