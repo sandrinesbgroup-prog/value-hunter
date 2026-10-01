@@ -389,6 +389,16 @@ function activerFilm() {
       video.play().catch(() => {});
     });
   });
+  // Bouton « Voir le film » du bandeau : descend jusqu'au film et le lance
+  document.querySelectorAll("[data-lire-film]").forEach(lien => {
+    lien.addEventListener("click", e => {
+      const film = document.querySelector(".film");
+      if (!film) return;
+      e.preventDefault();
+      film.scrollIntoView({ behavior: "smooth", block: "center" });
+      film.querySelector(".film__lecture")?.click();
+    });
+  });
 }
 
 /* ---------- Démarrage ---------------------------------------------------- */

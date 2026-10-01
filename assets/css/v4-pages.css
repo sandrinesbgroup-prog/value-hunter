@@ -225,7 +225,7 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .a-fournir { padding: 1px 7px; border-radius: 4px; background: var(--fond-doux); font-size: 0.85em; font-weight: 700; color: var(--prune); }
 
 /* ---------- Film de présentation (page L'agence) ------------------------- */
-.section--film { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
+.section--film { padding-top: clamp(28px, 3vw, 44px); padding-bottom: 0; }
 .film { position: relative; max-width: 1080px; margin-inline: auto; aspect-ratio: 16 / 9; border-radius: var(--rayon); overflow: hidden; background: var(--nuit); }
 .film__video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .film__lecture { position: absolute; inset: 0; display: grid; place-items: end center; padding-bottom: 9%; border: 0; padding: 0; background: transparent; cursor: pointer; }
