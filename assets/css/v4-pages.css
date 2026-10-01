@@ -225,8 +225,8 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .section--film { padding-top: clamp(28px, 3vw, 44px); padding-bottom: 0; }
 .film { position: relative; max-width: 1080px; margin-inline: auto; aspect-ratio: 16 / 9; border-radius: var(--rayon); overflow: hidden; background: var(--nuit); }
 .film__video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.film__lecture { position: absolute; inset: 0; display: grid; place-items: end center; padding-bottom: 9%; border: 0; padding: 0; background: transparent; cursor: pointer; }
-.film__lecture span { width: clamp(64px, 8vw, 96px); aspect-ratio: 1; border-radius: 50%; background: var(--lilas); box-shadow: 0 0 0 10px rgba(157, 113, 224, 0.25); transition: transform .3s var(--courbe), box-shadow .3s var(--courbe); position: relative; }
+.film__lecture { position: absolute; inset: 0; display: block; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.film__lecture span { position: absolute; left: 50%; top: 79%; translate: -50% -50%; width: clamp(56px, 7vw, 92px); aspect-ratio: 1; border-radius: 50%; background: var(--lilas); box-shadow: 0 0 0 10px rgba(157, 113, 224, 0.25); transition: transform .3s var(--courbe), box-shadow .3s var(--courbe); }
 .film__lecture span::after { content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%); border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent #fff; }
 .film__lecture:hover span, .film__lecture:focus-visible span { transform: scale(1.08); box-shadow: 0 0 0 16px rgba(157, 113, 224, 0.2); }
 .film.joue .film__lecture { display: none; }
