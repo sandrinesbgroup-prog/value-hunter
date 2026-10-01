@@ -164,6 +164,7 @@ function poserFiche() {
          <h2>Pour investir</h2>
          ${locatif}
          <p>Dossier chiffré sur demande.</p>
+         <a class="bouton bouton--violet" href="contact.html?bien=${bien.ref}&amp;projet=Investir&amp;dossier=1">Demander le dossier</a>
        </section>`
     : "";
 
@@ -206,6 +207,7 @@ function poserFiche() {
             <strong>${euros(bien.prix)}</strong>
             <p>${bien.specs.join(" · ")}</p>
             <a class="bouton bouton--blanc" href="contact.html?bien=${bien.ref}">Demander une visite</a>
+            ${bien.investisseur ? `<a class="bouton bouton--contour" href="contact.html?bien=${bien.ref}&amp;projet=Investir&amp;dossier=1">Demander le dossier</a>` : ""}
           </aside>
         </div>
       </div>
@@ -300,6 +302,14 @@ function activerFormulaires() {
     champBien.hidden = false;
     champBien.querySelector("input").value = `${bien.titre}, ${bien.lieu} (${bien.reference})`;
   }
+  // Venue d'un bouton « Demander le dossier » : projet Investir coché, demande pré-remplie
+  const projet = parametre("projet");
+  const caseProjet = projet && document.querySelector(`input[name="Votre projet"][value="${projet}"]`);
+  if (caseProjet) caseProjet.checked = true;
+  const message = document.querySelector("#c-message");
+  if (parametre("dossier") && message && !message.value) {
+    message.value = bien ? "Je souhaite recevoir le dossier investisseur de ce bien." : "Je souhaite recevoir un dossier investisseur.";
+  }
 
   document.querySelectorAll("form[data-formulaire]").forEach((formulaire) => {
     formulaire.addEventListener("submit", (e) => {
@@ -367,6 +377,20 @@ function poserBarres() {
   document.querySelectorAll(".regard__barre").forEach((barre, i) => barre.style.setProperty("--i", i));
 }
 
+/* ---------- Film de présentation : le bouton lance la lecture avec le son, puis laisse les commandes */
+
+function activerFilm() {
+  document.querySelectorAll(".film").forEach(film => {
+    const video = film.querySelector("video"), bouton = film.querySelector(".film__lecture");
+    if (!video || !bouton) return;
+    bouton.addEventListener("click", () => {
+      film.classList.add("joue");
+      video.controls = true;
+      video.play().catch(() => {});
+    });
+  });
+}
+
 /* ---------- Démarrage ---------------------------------------------------- */
 
 poserEntete();
@@ -379,3 +403,4 @@ activerGalerie();
 activerSimulateur();
 activerFormulaires();
 activerApparitions();
+activerFilm();

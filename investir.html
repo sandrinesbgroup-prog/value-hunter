@@ -26,45 +26,63 @@
     <span class="hero__etiquette entre">Investissement locatif</span>
     <h1 class="entre">Investir</h1>
     <p class="entre">Rénové. Loué ou prêt à l'être. Chiffré.</p>
+    <div class="hero__actions entre">
+      <a class="bouton bouton--blanc bouton--grand" href="#biens">Voir les biens</a>
+      <a class="bouton bouton--contour bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander un dossier</a>
+    </div>
   </section>
 
-  <section class="section">
+  <!-- Les trois types, en cartes claires cliquables (même style que la page L'agence) -->
+  <section class="section section--chevauche">
     <div class="conteneur">
-      <div class="tete revele"><h2>Trois types de biens</h2></div>
       <div class="entrees">
-        <div class="entree revele">
-          <span class="entree__num">01</span>
+        <a class="entree entree--question revele" href="biens.html?filtre=Rénové">
           <h3>Rénové, prêt à louer</h3>
           <p>Travaux faits.</p>
-        </div>
-        <div class="entree revele" style="--delai:.1s">
-          <span class="entree__num">02</span>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
+        <a class="entree entree--question revele" href="biens.html?filtre=Immeuble de rapport" style="--delai:.1s">
           <h3>Immeuble de rapport</h3>
           <p>Plusieurs logements, une seule acquisition.</p>
-        </div>
-        <div class="entree revele" style="--delai:.2s">
-          <span class="entree__num">03</span>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
+        <a class="entree entree--question revele" href="biens.html?filtre=À rénover" style="--delai:.2s">
           <h3>À rénover</h3>
           <p>Un prix d'entrée plus bas.</p>
-        </div>
+          <span class="entree__fleche" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section section--douce">
-    <div class="conteneur duo">
-      <div class="revele">
-        <h2>Le dossier investisseur</h2>
-        <p class="chapo">Un dossier chiffré pour chaque bien, sur demande.</p>
+  <section class="section section--serree" id="biens">
+    <div class="conteneur">
+      <div class="tete revele">
+        <h2>Biens pour investir</h2>
+        <a class="bouton bouton--violet" href="biens.html?filtre=investisseur">Tous les biens</a>
       </div>
-      <ul class="liste revele" style="--delai:.1s">
-        <li>Prix et frais d'acquisition</li>
-        <li>Loyers en place ou loyers de marché</li>
-        <li>Charges et taxe foncière</li>
-        <li>Travaux réalisés ou à prévoir</li>
-        <li>Rendement brut</li>
-        <li>Diagnostics</li>
-      </ul>
+      <div class="biens" data-biens data-investisseur></div>
+    </div>
+  </section>
+
+  <!-- Le dossier investisseur : bandeau sombre, six éléments en tuiles, et la demande -->
+  <section class="section dossier" id="dossier">
+    <div class="conteneur">
+      <div class="dossier__tete revele">
+        <div>
+          <h2>Le dossier investisseur</h2>
+          <p class="chapo">Un dossier chiffré pour chaque bien, sur demande.</p>
+        </div>
+        <a class="bouton bouton--blanc bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander le dossier</a>
+      </div>
+      <ol class="dossier__tuiles">
+        <li class="revele"><span>01</span>Prix et frais d'acquisition</li>
+        <li class="revele" style="--delai:.05s"><span>02</span>Loyers en place ou loyers de marché</li>
+        <li class="revele" style="--delai:.1s"><span>03</span>Charges et taxe foncière</li>
+        <li class="revele" style="--delai:.15s"><span>04</span>Travaux réalisés ou à prévoir</li>
+        <li class="revele" style="--delai:.2s"><span>05</span>Rendement brut</li>
+        <li class="revele" style="--delai:.25s"><span>06</span>Diagnostics</li>
+      </ol>
     </div>
   </section>
 
@@ -83,16 +101,6 @@
           <p class="simulateur__mention">Calcul indicatif&nbsp;: loyer annuel divisé par le prix et les travaux. Hors frais d'acquisition, charges, fiscalité et vacance locative.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--serree">
-    <div class="conteneur">
-      <div class="tete revele">
-        <h2>Biens pour investir</h2>
-        <a class="bouton bouton--violet" href="biens.html?filtre=investisseur">Tous les biens</a>
-      </div>
-      <div class="biens" data-biens data-investisseur></div>
     </div>
   </section>
 

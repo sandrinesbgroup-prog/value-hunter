@@ -223,3 +223,29 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .prose ul { padding-left: 1.1em; }
 .prose a { text-decoration: underline; text-underline-offset: 3px; }
 .a-fournir { padding: 1px 7px; border-radius: 4px; background: var(--fond-doux); font-size: 0.85em; font-weight: 700; color: var(--prune); }
+
+/* ---------- Film de présentation (page L'agence) ------------------------- */
+.section--film { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
+.film { position: relative; max-width: 1080px; margin-inline: auto; aspect-ratio: 16 / 9; border-radius: var(--rayon); overflow: hidden; background: var(--nuit); }
+.film__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.film__lecture { position: absolute; inset: 0; display: grid; place-items: end center; padding-bottom: 9%; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.film__lecture span { width: clamp(64px, 8vw, 96px); aspect-ratio: 1; border-radius: 50%; background: var(--lilas); box-shadow: 0 0 0 10px rgba(157, 113, 224, 0.25); transition: transform .3s var(--courbe), box-shadow .3s var(--courbe); position: relative; }
+.film__lecture span::after { content: ""; position: absolute; left: 54%; top: 50%; transform: translate(-50%, -50%); border-style: solid; border-width: 13px 0 13px 21px; border-color: transparent transparent transparent #fff; }
+.film__lecture:hover span, .film__lecture:focus-visible span { transform: scale(1.08); box-shadow: 0 0 0 16px rgba(157, 113, 224, 0.2); }
+.film.joue .film__lecture { display: none; }
+
+/* ---------- Page Investir : boutons du bandeau et dossier investisseur ---- */
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(26px, 3vw, 36px); }
+.bouton--contour { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.7); }
+.bouton--contour:hover { background: #fff; color: var(--nuit); }
+.dossier { background: var(--nuit); color: #fff; position: relative; overflow: hidden; }
+.dossier::after { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; aspect-ratio: 1; background: radial-gradient(circle, rgba(157, 113, 224, 0.35), transparent 65%); pointer-events: none; }
+.dossier .conteneur { position: relative; z-index: 1; }
+.dossier__tete { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px; margin-bottom: clamp(32px, 4vw, 52px); }
+.dossier h2 { color: #fff; margin-bottom: 14px; }
+.dossier .chapo { color: rgba(255, 255, 255, 0.78); }
+.dossier__tuiles { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.dossier__tuiles li { display: flex; flex-direction: column; gap: 22px; padding: clamp(22px, 2.2vw, 30px); border-radius: var(--rayon); background: rgba(255, 255, 255, 0.07); font-size: clamp(19px, 1.6vw, 22px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; transition: background 0.3s; }
+.dossier__tuiles li:hover { background: var(--prune); }
+.dossier__tuiles span { font-size: 14px; font-weight: 800; color: var(--lilas-clair); letter-spacing: 0.04em; }
+.fiche__carte .bouton + .bouton { margin-top: 10px; }

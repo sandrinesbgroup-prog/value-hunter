@@ -51,6 +51,18 @@
     </div>
   </section>
 
+  <!-- Film de présentation : lecture au clic seulement, rien n'est chargé avant (preload="none") -->
+  <section class="section section--film">
+    <div class="conteneur revele">
+      <div class="film">
+        <video class="film__video" preload="none" playsinline poster="assets/img/film-affiche.jpg" aria-label="Film de présentation de Value Hunter">
+          <source src="assets/video/value-hunter-film.mp4" type="video/mp4">
+        </video>
+        <button class="film__lecture" type="button" aria-label="Lire le film de présentation"><span aria-hidden="true"></span></button>
+      </div>
+    </div>
+  </section>
+
   <section class="appel appel--phrase">
     <div class="conteneur revele">
       <h2>Acheter, investir ou vendre, en connaissant le bien avant de décider.</h2>
