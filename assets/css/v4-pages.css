@@ -347,3 +347,9 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .formulaire .consentement { font-size: 14px; }
 .formulaire .formulaire__mention { font-size: 13px; }
 .formulaire button.bouton { padding-top: 14px; padding-bottom: 14px; }
+
+/* Simulateur de rendement : pas d'encadré lilas dans le bloc foncé, et plus compact */
+.simulateur .formulaire { padding: 0; background: none; border: 0; }
+.simulateur { gap: clamp(20px, 3vw, 44px); padding: clamp(22px, 2.8vw, 36px); }
+.simulateur .champ input { padding: 10px 14px; }
+.simulateur__valeur { font-size: clamp(52px, 6.5vw, 92px); margin: 4px 0 10px; }
