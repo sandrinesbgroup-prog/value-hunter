@@ -274,3 +274,8 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .hero__haut { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .retour { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: var(--rayon); background: #fff; color: var(--nuit); font-size: 13px; font-weight: 700; transition: background 0.25s; }
 .retour:hover { background: var(--lilas-clair); }
+
+/* Statut « Sous compromis » bien visible sur l'annonce */
+.hero__statut { padding: 9px 16px; border-radius: var(--rayon); background: var(--lilas-clair); color: var(--nuit); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; }
+.mosaique > button { position: relative; }
+.mosaique__statut { position: absolute; left: 16px; top: 16px; z-index: 2; padding: 10px 18px; border-radius: var(--rayon); background: var(--violet); color: #fff; font-size: 16px; font-weight: 800; pointer-events: none; }

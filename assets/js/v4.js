@@ -214,7 +214,8 @@ function poserFiche() {
 
   racine.innerHTML = `
     <section class="hero hero--page hero--fiche">
-      <span class="hero__etiquette entre">${bien.statut ? `${bien.statut} · ` : ""}${bien.categorie} · ${bien.lieu}</span>
+      ${bien.statut ? `<span class="hero__statut entre">${bien.statut}</span>` : ""}
+      <span class="hero__etiquette entre">${bien.categorie} · ${bien.lieu}</span>
       <h1 class="entre">${bien.titre}</h1>
       <p class="hero__prix entre">${euros(bien.prix)}${bien.honoraires?.charge === "acquéreur" ? " honoraires inclus" : ""}</p>
     </section>
@@ -222,7 +223,7 @@ function poserFiche() {
     <section class="section">
       <div class="conteneur">
         <div class="mosaique">
-          ${bien.photos.map((p) => `<button type="button" aria-label="Agrandir la photo : ${p.alt}"><img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" decoding="async"></button>`).join("")}
+          ${bien.photos.map((p, i) => `<button type="button" aria-label="Agrandir la photo : ${p.alt}">${i === 0 && bien.statut ? `<span class="mosaique__statut">${bien.statut}</span>` : ""}<img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" decoding="async"></button>`).join("")}
           <button class="mosaique__tout" type="button">${bien.photos.length} photos</button>
         </div>
 
@@ -279,6 +280,8 @@ function poserRetour() {
   const etiquette = bandeau.querySelector(".hero__etiquette");
   if (etiquette) {
     etiquette.insertAdjacentHTML("beforebegin", `<div class="hero__haut entre">${lien}</div>`);
+    const statut = bandeau.querySelector(".hero__statut");
+    if (statut) bandeau.querySelector(".hero__haut").append(statut);
     bandeau.querySelector(".hero__haut").append(etiquette);
   } else {
     bandeau.insertAdjacentHTML("afterbegin", `<div class="hero__haut entre">${lien}</div>`);
