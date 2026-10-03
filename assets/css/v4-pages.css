@@ -18,8 +18,6 @@
 .hero--page::before, .hero--page::after { display: none; }
 .hero--page h1 { margin: 22px 0 0; max-width: 11em; font-size: clamp(44px, 6.2vw, 88px); }
 .hero--page p { margin: 20px 0 0; max-width: 26em; }
-.fiche__retour { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 18px; padding: 10px 18px; border-radius: var(--rayon); background: rgba(255, 255, 255, 0.16); color: #fff; font-size: 16px; font-weight: 700; transition: background 0.25s; }
-.fiche__retour:hover { background: rgba(255, 255, 255, 0.28); }
 .hero--fiche h1 { margin-top: 22px; max-width: 15em; font-size: clamp(34px, 4.4vw, 62px); }
 
 /* Rappel du logo : une série de filets blancs très fins, de plus en plus hauts, qui se tracent à l'arrivée */
@@ -271,3 +269,8 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .dpe__lettre--climat-e { background: #BA72EF; color: #fff; }
 .dpe__lettre--climat-f { background: #A74DEB; color: #fff; }
 .dpe__lettre--climat-g { background: #8D1DE8; color: #fff; }
+
+/* Bouton retour, sur la même ligne que l'étiquette du bandeau */
+.hero__haut { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.retour { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: var(--rayon); background: #fff; color: var(--nuit); font-size: 13px; font-weight: 700; transition: background 0.25s; }
+.retour:hover { background: var(--lilas-clair); }

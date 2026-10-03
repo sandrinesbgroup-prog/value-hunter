@@ -214,7 +214,6 @@ function poserFiche() {
 
   racine.innerHTML = `
     <section class="hero hero--page hero--fiche">
-      <a class="fiche__retour entre" href="biens.html" data-retour>← Tous les biens</a>
       <span class="hero__etiquette entre">${bien.statut ? `${bien.statut} · ` : ""}${bien.categorie} · ${bien.lieu}</span>
       <h1 class="entre">${bien.titre}</h1>
       <p class="hero__prix entre">${euros(bien.prix)}${bien.honoraires?.charge === "acquéreur" ? " honoraires inclus" : ""}</p>
@@ -271,9 +270,20 @@ function poserFiche() {
 
 function poserRetour() {
   const bandeau = document.querySelector(".hero--page");
-  if (bandeau && !bandeau.querySelector("[data-retour]")) {
-    bandeau.insertAdjacentHTML("afterbegin", `<a class="fiche__retour entre" href="index.html" data-retour>← Retour</a>`);
+  if (!bandeau) return;
+  const fiche = document.querySelector("[data-fiche]");
+  const texte = fiche ? "Tous les biens" : "Retour";
+  const lien = `<a class="retour" href="${fiche ? "biens.html" : "index.html"}" aria-label="${texte}" data-retour><span aria-hidden="true">←</span><span class="retour__texte">${texte}</span></a>`;
+
+  // Sur la même ligne que l'étiquette du bandeau : le titre ne descend pas (choix de Sandrine, 2026-10-03).
+  const etiquette = bandeau.querySelector(".hero__etiquette");
+  if (etiquette) {
+    etiquette.insertAdjacentHTML("beforebegin", `<div class="hero__haut entre">${lien}</div>`);
+    bandeau.querySelector(".hero__haut").append(etiquette);
+  } else {
+    bandeau.insertAdjacentHTML("afterbegin", `<div class="hero__haut entre">${lien}</div>`);
   }
+
   const vientDuSite = document.referrer && new URL(document.referrer).origin === location.origin;
   document.querySelectorAll("[data-retour]").forEach((lien) => {
     lien.addEventListener("click", (e) => {
