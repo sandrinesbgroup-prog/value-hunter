@@ -187,8 +187,8 @@ function blocDpe(bien) {
   const etiquette = (type, classe, libelle) => classe
     ? `<div class="dpe__ligne"><span class="dpe__lettre dpe__lettre--${type}-${classe.toLowerCase()}">${classe}</span><span>${libelle}</span></div>`
     : `<div class="dpe__ligne"><span class="dpe__lettre">–</span><span>${libelle} : non communiqué</span></div>`;
-  const excessif = ["F", "G"].includes(d.energie) ? "<p><strong>Logement à consommation énergétique excessive.</strong></p>" : "";
-  const depenses = d.depenses ? `<p>Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
+  const excessif = ["F", "G"].includes(d.energie) ? "<p class=\"dpe__mention\">Logement à consommation énergétique excessive.</p>" : "";
+  const depenses = d.depenses ? `<p class="dpe__mention">Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
   return `
     <section class="fiche__encadre">
       <h2>Performance énergétique${d.avant ? ' <span class="h2__precision">avant rénovation</span>' : ""}</h2>
@@ -196,7 +196,7 @@ function blocDpe(bien) {
         ${etiquette("energie", d.energie, `Classe énergie (DPE)${d.avant ? ", établie avant rénovation" : ""}`)}
         ${etiquette("climat", d.climat, "Classe climat (GES)")}
       </div>
-      ${excessif}${depenses}${d.note ? `<p>${d.note}</p>` : ""}
+      ${excessif}${depenses}${d.note ? `<p class="dpe__mention">${d.note}</p>` : ""}
     </section>`;
 }
 

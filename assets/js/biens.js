@@ -51,7 +51,7 @@ const BIENS = [
       ["Pièces", "5"],
       ["Chambres", "3"],
       ["État", "À rénover"],
-      ["Année de construction", "1850"],
+      ["Construction", "1850"],
       ["Exposition", "Est"],
       ["Copropriété", "12 lots"],
       ["Charges de copropriété", "2 400 €/an"],
@@ -97,7 +97,7 @@ const BIENS = [
       ["Surface", "192 m²"],
       ["Logements", "8"],
       ["Niveaux", "Rez-de-chaussée + 3"],
-      ["Année de construction", "1900"]
+      ["Construction", "1900"]
     ],
     dpe: { energie: "E", climat: "E", depenses: "entre 3 500 € et 4 000 € par an" },
     photos: [
@@ -144,7 +144,7 @@ const BIENS = [
       ["Salles de bains", "3"],
       ["Niveaux", "3"],
       ["État", "Travaux à prévoir"],
-      ["Année de construction", "1850"],
+      ["Construction", "1850"],
       ["Exposition", "Est / Ouest"],
       ["Stationnement", "1 place"]
     ],
@@ -274,7 +274,7 @@ const BIENS = [
       ["Chambres", "2"],
       ["Étage", "2e et dernier"],
       ["État", "Rénové"],
-      ["Année de construction", "1950"],
+      ["Construction", "1950"],
       ["Exposition", "Est / Ouest"],
       ["Cave", "Oui"],
       ["Copropriété", "5 lots"],
@@ -333,7 +333,7 @@ const BIENS = [
       ["Chambres", "1"],
       ["Étage", "Rez-de-jardin"],
       ["État", "À rénover"],
-      ["Année de construction", "1950"],
+      ["Construction", "1950"],
       ["Copropriété", "5 lots"],
       ["Charges de copropriété", "300 €/an"],
       ["Procédure en cours", "Non"]

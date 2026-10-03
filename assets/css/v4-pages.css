@@ -301,9 +301,9 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 
 /* Caractéristiques : deux colonnes compactes, valeurs en violet (choix de Sandrine, 2026-10-03) */
 .fiche__corps .specs--colonnes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 32px; }
-.fiche__corps .specs--colonnes > div, .fiche__corps .specs--colonnes > div:first-child { padding: 11px 0; border-top: 0; border-bottom: 1px solid var(--filet); font-size: 16px; }
+.fiche__corps .specs--colonnes > div, .fiche__corps .specs--colonnes > div:first-child { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 0; border-bottom: 1px solid var(--filet); font-size: 16px; }
 .specs--colonnes dt { color: var(--gris); }
-.specs--colonnes dd { font-weight: 800; color: var(--violet); }
+.specs--colonnes dd { font-weight: 700; color: var(--encre); text-align: left; }
 @media (max-width: 600px) { .fiche__corps .specs--colonnes { grid-template-columns: 1fr; } }
 
 /* Encadrés lilas très clair pour la performance énergétique et les caractéristiques */
@@ -314,3 +314,6 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .fiche__encadre p:last-child { margin-bottom: 0; }
 .fiche__corps .liste li::before { width: 10px; height: 10px; border-radius: 2px; }
 @media (max-width: 600px) { .fiche__encadre { padding: 18px; } .fiche__encadre .specs--colonnes > div:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid #E4DCF2; } }
+
+.fiche__encadre .dpe__mention { margin: 14px 0 0; font-size: 14px; font-weight: 400; color: var(--gris); }
+.fiche__encadre .dpe__mention + .dpe__mention { margin-top: 4px; }
