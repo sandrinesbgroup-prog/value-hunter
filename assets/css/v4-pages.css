@@ -246,9 +246,3 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .dossier-carte__liste li { position: relative; padding-left: 22px; font-size: 16px; font-weight: 600; line-height: 1.35; }
 .dossier-carte__liste li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 9px; height: 9px; border-radius: 2px; background: var(--lilas); }
 .dossier-carte .bouton { white-space: nowrap; }
-
-/* Coordonnées en tête de la page Contact */
-.coordonnees { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 0 0 clamp(28px, 3vw, 40px); padding: 18px 22px; border-radius: var(--rayon); background: var(--fond-doux); font-size: clamp(18px, 1.8vw, 22px); font-weight: 800; }
-.coordonnees:empty { display: none; }
-.coordonnees a { color: var(--nuit); transition: color 0.25s; }
-.coordonnees a:hover { color: var(--violet); }

@@ -10,7 +10,7 @@ const AGENCE = {
   telephone: "06 19 88 53 96" // écrit « 06 12 34 56 78 » ; vide = non affiché
 };
 
-/* Liens téléphone et e-mail, repris dans le pied de page et sur la page Contact. */
+/* Liens téléphone et e-mail, repris dans le pied de page. */
 function lignesCoordonnees() {
   const lignes = [];
   if (AGENCE.telephone) {
@@ -19,13 +19,6 @@ function lignesCoordonnees() {
   }
   if (AGENCE.email) lignes.push(`<a href="mailto:${AGENCE.email}">${AGENCE.email}</a>`);
   return lignes;
-}
-
-/* <p data-coordonnees></p> */
-function poserCoordonnees() {
-  document.querySelectorAll("[data-coordonnees]").forEach((bloc) => {
-    bloc.innerHTML = lignesCoordonnees().join("");
-  });
 }
 
 const PAGES = [
@@ -428,7 +421,6 @@ poserBiens();
 poserFiche();
 poserBarres();
 poserPied();
-poserCoordonnees();
 activerVideo();
 activerGalerie();
 activerSimulateur();
