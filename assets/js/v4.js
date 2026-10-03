@@ -163,6 +163,9 @@ function poserBiens() {
   if (bandeau) {
     const ligne = BIENS.map((b) => `${b.lieu} <span>${b.titre}</span> ${euros(b.prix)}<i></i>`).join("");
     bandeau.innerHTML = ligne.repeat(6);
+    // Un tour (la moitié de la piste = 3 fois la liste) à vitesse constante : environ 4 s par bien,
+    // la vitesse validée avec 3 biens (36 s). Sans ça, chaque bien ajouté accélère le bandeau.
+    bandeau.style.animationDuration = `${BIENS.length * 12}s`;
   }
 
   const filtres = document.querySelector(".filtres");
