@@ -209,8 +209,8 @@ const BIENS = [
       honoraires: { charge: "vendeur" },
       specs: [`${surface} m²`, t2 ? "2 pièces" : "1 pièce", etage],
       accroche: t2
-        ? "Un deux-pièces entièrement rénové, avec séjour et cuisine ouverte équipée, chambre séparée et salle d'eau. Disponible au premier trimestre 2027."
-        : "Un studio entièrement rénové, avec pièce de vie, cuisine ouverte équipée et salle d'eau. Disponible au premier trimestre 2027.",
+        ? "Un deux-pièces entièrement rénové, avec séjour et cuisine ouverte équipée, chambre séparée et salle d'eau. Disponibilité prévue au premier trimestre 2027."
+        : "Un studio entièrement rénové, avec pièce de vie, cuisine ouverte équipée et salle d'eau. Disponibilité prévue au premier trimestre 2027.",
       description: [
         `${situation} Petite copropriété en syndic bénévole, à proximité de la gare Transilien (ligne H, Paris Gare du Nord en 33 minutes environ).`,
         "Plans, diagnostics et dossier chiffré sur demande."
@@ -227,11 +227,12 @@ const BIENS = [
         ["Pièces", t2 ? "2" : "1"],
         ["Étage", etage],
         ["État", "Livré rénové"],
-        ["Disponibilité", "1er trimestre 2027"],
+        ["Disponibilité", "1er trimestre 2027 (prévisionnelle)"],
         ["Copropriété", "Petite copropriété, syndic bénévole"],
         ["Charges de copropriété", `${charges} €/an (estimation)`],
         ["Procédure en cours", "Non"]
       ],
+      avertissement: "Les photos sont des projections de rénovation et d'ameublement. Les charges et la date de disponibilité sont des estimations indicatives, non contractuelles, qui n'engagent pas l'agence. Le détail figure dans le dossier d'investissement, envoyé sur demande.",
       dpe: { energie: dpe, note: "DPE établi avant rénovation." },
       photos: [
         ...visuels,

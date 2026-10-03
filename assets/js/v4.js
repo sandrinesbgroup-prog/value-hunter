@@ -108,6 +108,9 @@ function poserPied() {
 }
 
 /* ---------- Cartes de biens ---------------------------------------------- */
+/* Une photo de projection ou de mise en scène virtuelle porte « non contractuelle » dans sa légende. */
+const estProjection = (p) => /non contractuelle/.test(p.alt);
+
 /* <div class="biens" data-biens data-limite="3" data-investisseur></div> */
 
 function carteBien(bien, i) {
@@ -117,6 +120,7 @@ function carteBien(bien, i) {
       <div class="bien__photo">
         <img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" loading="lazy" decoding="async">
         <span class="bien__tag">${bien.categorie}</span>
+        ${estProjection(p) ? `<span class="bien__projection">Projection non contractuelle</span>` : ""}
         ${bien.statut ? `<span class="bien__statut">${bien.statut}</span>` : ""}
         <span class="bien__voir">Voir le bien</span>
       </div>
@@ -223,12 +227,13 @@ function poserFiche() {
     <section class="section">
       <div class="conteneur">
         <div class="mosaique">
-          ${bien.photos.map((p, i) => `<button type="button" aria-label="Agrandir la photo : ${p.alt}">${i === 0 && bien.statut ? `<span class="mosaique__statut">${bien.statut}</span>` : ""}<img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" decoding="async"></button>`).join("")}
+          ${bien.photos.map((p, i) => `<button type="button" aria-label="Agrandir la photo : ${p.alt}">${i === 0 && bien.statut ? `<span class="mosaique__statut">${bien.statut}</span>` : ""}${estProjection(p) ? `<span class="mosaique__projection">Projection</span>` : ""}<img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" decoding="async"></button>`).join("")}
           <button class="mosaique__tout" type="button">${bien.photos.length} photos</button>
         </div>
 
         <div class="fiche">
           <div class="fiche__corps">
+            ${bien.avertissement ? `<p class="fiche__avertissement">${bien.avertissement}</p>` : ""}
             <section>
               <p class="fiche__accroche">${bien.accroche}</p>
               ${bien.description.map((p) => `<p>${p}</p>`).join("")}
