@@ -317,3 +317,11 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 
 .fiche__encadre .dpe__mention { margin: 14px 0 0; font-size: 14px; font-weight: 400; color: var(--gris); }
 .fiche__encadre .dpe__mention + .dpe__mention { margin-top: 4px; }
+
+/* Formulaires dans un encadré : fond lilas très clair, champs blancs (blanc sur les sections déjà lilas) */
+.formulaire { padding: clamp(24px, 3.4vw, 44px); border-radius: var(--rayon); background: var(--fond-doux); }
+.formulaire .choix label, .formulaire .formulaire__retour { background: #fff; }
+.formulaire .choix label:has(input:checked) { background: var(--violet); }
+.section--douce .formulaire { background: #fff; border: 1px solid var(--filet); }
+.section--douce .formulaire .choix label, .section--douce .formulaire .formulaire__retour { background: var(--fond-doux); }
+.section--douce .formulaire .choix label:has(input:checked) { background: var(--violet); }
