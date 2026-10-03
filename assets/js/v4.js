@@ -263,13 +263,25 @@ function poserFiche() {
         </div>
       </div>
     </section>`;
+}
 
-  // Retour : si l'on vient d'une page du site, on y revient (position et filtres conservés).
-  racine.querySelector("[data-retour]").addEventListener("click", (e) => {
-    if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
-      e.preventDefault();
-      history.back();
-    }
+/* ---------- Bouton retour en haut de chaque page intérieure -------------- */
+/* Si l'on vient d'une page du site, on y revient (position et filtres conservés) ;
+   sinon le lien mène à son adresse : l'accueil, ou la liste des biens depuis une fiche. */
+
+function poserRetour() {
+  const bandeau = document.querySelector(".hero--page");
+  if (bandeau && !bandeau.querySelector("[data-retour]")) {
+    bandeau.insertAdjacentHTML("afterbegin", `<a class="fiche__retour entre" href="index.html" data-retour>← Retour</a>`);
+  }
+  const vientDuSite = document.referrer && new URL(document.referrer).origin === location.origin;
+  document.querySelectorAll("[data-retour]").forEach((lien) => {
+    lien.addEventListener("click", (e) => {
+      if (vientDuSite && history.length > 1) {
+        e.preventDefault();
+        history.back();
+      }
+    });
   });
 }
 
@@ -471,6 +483,7 @@ function activerFilm() {
 poserEntete();
 poserBiens();
 poserFiche();
+poserRetour();
 poserBarres();
 poserPied();
 activerVideo();
