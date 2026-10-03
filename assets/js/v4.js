@@ -191,9 +191,9 @@ function blocDpe(bien) {
   const depenses = d.depenses ? `<p>Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
   return `
     <section>
-      <h2>Performance énergétique</h2>
+      <h2>Performance énergétique${d.avant ? ' <span class="h2__precision">avant rénovation</span>' : ""}</h2>
       <div class="dpe">
-        ${etiquette("energie", d.energie, "Classe énergie (DPE)")}
+        ${etiquette("energie", d.energie, `Classe énergie (DPE)${d.avant ? ", établie avant rénovation" : ""}`)}
         ${etiquette("climat", d.climat, "Classe climat (GES)")}
       </div>
       ${excessif}${depenses}${d.note ? `<p>${d.note}</p>` : ""}
@@ -238,6 +238,7 @@ function poserFiche() {
               <p class="fiche__accroche">${bien.accroche}</p>
               ${bien.description.map((p) => `<p>${p}</p>`).join("")}
             </section>
+            ${blocDpe(bien)}
             <section>
               <h2>Les atouts</h2>
               <ul class="liste">${bien.atouts.map((a) => `<li>${a}</li>`).join("")}</ul>
@@ -249,7 +250,6 @@ function poserFiche() {
                 ${bien.caracteristiques.map(([cle, valeur]) => `<div><dt>${cle}</dt><dd>${valeur}</dd></div>`).join("")}
               </dl>
             </section>
-            ${blocDpe(bien)}
             <section>
               <p class="mention">${texteHonoraires(bien)} <a href="honoraires.html">Barème des honoraires</a>.</p>
               <p class="mention">Réf. ${bien.reference}. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : <a href="https://www.georisques.gouv.fr" rel="noopener" target="_blank">www.georisques.gouv.fr</a>. Photos et descriptif non contractuels.</p>
@@ -258,6 +258,7 @@ function poserFiche() {
           <aside class="fiche__carte">
             ${bien.statut ? `<span class="fiche__statut">${bien.statut}</span>` : ""}
             <strong>${euros(bien.prix)}</strong>
+            ${bien.dpe?.energie ? `<p class="fiche__dpe"><span class="dpe__lettre dpe__lettre--petite dpe__lettre--energie-${bien.dpe.energie.toLowerCase()}">${bien.dpe.energie}</span>DPE${bien.dpe.avant ? " avant rénovation" : ""}</p>` : ""}
             ${texteHonoraires(bien) ? `<p class="fiche__honoraires">${texteHonoraires(bien)}</p>` : ""}
             <p>${bien.specs.join(" · ")}</p>
             ${bien.statut

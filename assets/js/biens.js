@@ -233,7 +233,7 @@ const BIENS = [
         ["Procédure en cours", "Non"]
       ],
       avertissement: "Les photos sont des projections de rénovation et d'ameublement. Les charges et la date de disponibilité sont des estimations indicatives, non contractuelles, qui n'engagent pas l'agence. Le détail figure dans le dossier d'investissement, envoyé sur demande.",
-      dpe: { energie: dpe, note: "DPE établi avant rénovation." },
+      dpe: { energie: dpe, avant: true },
       photos: [
         ...visuels,
         projection("bes-lot-salle-eau", "Salle d'eau", 1500, 529),

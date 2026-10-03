@@ -188,9 +188,9 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .fiche { display: grid; gap: clamp(40px, 5vw, 80px); padding-top: clamp(40px, 5vw, 72px); }
 .fiche > * { min-width: 0; }
 @media (min-width: 980px) { .fiche { grid-template-columns: minmax(0, 1fr) 370px; align-items: start; } }
-.fiche__corps > section + section { margin-top: clamp(40px, 4vw, 60px); }
-.fiche__corps h2 { margin-bottom: 20px; font-size: clamp(28px, 3vw, 38px); }
-.fiche__accroche { margin-bottom: 1em; font-size: clamp(20px, 1.8vw, 24px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.4; }
+.fiche__corps > section + section { margin-top: clamp(30px, 3vw, 44px); }
+.fiche__corps h2 { margin-bottom: 14px; font-size: clamp(20px, 1.7vw, 24px); letter-spacing: -0.02em; line-height: 1.2; }
+.fiche__accroche { margin-bottom: 0.9em; font-size: clamp(18px, 1.5vw, 20px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.45; }
 .fiche__corps p + p { margin-top: 1em; }
 .specs { margin: 0; }
 .specs > div { display: flex; justify-content: space-between; gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--filet); }
@@ -284,3 +284,17 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .mosaique__projection { position: absolute; left: 10px; bottom: 10px; z-index: 2; padding: 5px 9px; border-radius: 6px; background: rgba(23, 19, 31, 0.72); color: #fff; font-size: 12px; font-weight: 700; pointer-events: none; }
 .fiche__avertissement { margin: 0 0 26px; padding: 16px 20px; border-left: 4px solid var(--violet); border-radius: var(--rayon); background: var(--fond-doux); font-size: 15px; line-height: 1.55; }
 .tete__note { margin: 10px 0 0; max-width: 40em; font-size: 15px; color: var(--gris); }
+
+/* Fiche plus fine : textes, listes et caractéristiques resserrés */
+.fiche__corps { font-size: 16px; line-height: 1.6; }
+.fiche__corps .liste li { padding: 11px 0 11px 24px; font-size: 16px; }
+.fiche__corps .liste li::before { top: 1.25em; width: 8px; height: 8px; }
+.fiche__corps .specs > div { padding: 10px 0; font-size: 16px; }
+.hero--fiche h1 { font-size: clamp(30px, 3.4vw, 48px); }
+.hero--fiche .hero__prix { font-size: clamp(24px, 2.4vw, 32px); }
+.fiche__carte strong { font-size: 34px; }
+.h2__precision { font-size: 0.7em; font-weight: 700; color: var(--violet); letter-spacing: 0; }
+.dpe__lettre { width: 42px; height: 42px; font-size: 21px; }
+.dpe__ligne { font-size: 16px; }
+.fiche__dpe { display: flex; align-items: center; gap: 10px; margin: 14px 0 0; font-weight: 700; color: #fff; }
+.dpe__lettre--petite { width: 32px; height: 32px; font-size: 17px; }
