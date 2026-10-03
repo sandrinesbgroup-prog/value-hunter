@@ -214,6 +214,7 @@ function poserFiche() {
 
   racine.innerHTML = `
     <section class="hero hero--page hero--fiche">
+      <a class="fiche__retour entre" href="biens.html" data-retour>← Tous les biens</a>
       <span class="hero__etiquette entre">${bien.statut ? `${bien.statut} · ` : ""}${bien.categorie} · ${bien.lieu}</span>
       <h1 class="entre">${bien.titre}</h1>
       <p class="hero__prix entre">${euros(bien.prix)}${bien.honoraires?.charge === "acquéreur" ? " honoraires inclus" : ""}</p>
@@ -262,6 +263,14 @@ function poserFiche() {
         </div>
       </div>
     </section>`;
+
+  // Retour : si l'on vient d'une page du site, on y revient (position et filtres conservés).
+  racine.querySelector("[data-retour]").addEventListener("click", (e) => {
+    if (document.referrer && new URL(document.referrer).origin === location.origin && history.length > 1) {
+      e.preventDefault();
+      history.back();
+    }
+  });
 }
 
 /* ---------- Visionneuse de photos ---------------------------------------- */
@@ -302,12 +311,18 @@ function activerGalerie() {
     visionneuse.classList.add("ouverte");
     document.body.style.overflow = "hidden";
     visionneuse.querySelector(".visionneuse__fermer").focus();
+    // Le bouton « retour » du navigateur ou du téléphone ferme la visionneuse au lieu de quitter la fiche.
+    history.pushState({ visionneuse: true }, "");
   };
-  const fermer = () => {
+  const masquer = () => {
     visionneuse.classList.remove("ouverte");
     document.body.style.overflow = "";
     if (declencheur) declencheur.focus();
   };
+  const fermer = () => (history.state?.visionneuse ? history.back() : masquer());
+  window.addEventListener("popstate", () => {
+    if (visionneuse.classList.contains("ouverte")) masquer();
+  });
 
   vignettes.forEach((vignette, i) => vignette.addEventListener("click", () => ouvrir(i, vignette)));
   const tout = mosaique.querySelector(".mosaique__tout");
