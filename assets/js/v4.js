@@ -190,7 +190,7 @@ function blocDpe(bien) {
   const excessif = ["F", "G"].includes(d.energie) ? "<p><strong>Logement à consommation énergétique excessive.</strong></p>" : "";
   const depenses = d.depenses ? `<p>Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
   return `
-    <section>
+    <section class="fiche__encadre">
       <h2>Performance énergétique${d.avant ? ' <span class="h2__precision">avant rénovation</span>' : ""}</h2>
       <div class="dpe">
         ${etiquette("energie", d.energie, `Classe énergie (DPE)${d.avant ? ", établie avant rénovation" : ""}`)}
@@ -244,9 +244,9 @@ function poserFiche() {
               <ul class="liste">${bien.atouts.map((a) => `<li>${a}</li>`).join("")}</ul>
             </section>
             ${dossier}
-            <section>
+            <section class="fiche__encadre">
               <h2>Caractéristiques</h2>
-              <dl class="specs">
+              <dl class="specs specs--colonnes">
                 ${bien.caracteristiques.map(([cle, valeur]) => `<div><dt>${cle}</dt><dd>${valeur}</dd></div>`).join("")}
               </dl>
             </section>
