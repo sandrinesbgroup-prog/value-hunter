@@ -6,8 +6,27 @@
 
 /* Coordonnées de l'agence : à renseigner une seule fois ici. */
 const AGENCE = {
-  email: "" // adresse qui reçoit les formulaires — À FOURNIR
+  email: "contact@value-hunter.com", // reçoit aussi les formulaires
+  telephone: "06 19 88 53 96" // écrit « 06 12 34 56 78 » ; vide = non affiché
 };
+
+/* Liens téléphone et e-mail, repris dans le pied de page et sur la page Contact. */
+function lignesCoordonnees() {
+  const lignes = [];
+  if (AGENCE.telephone) {
+    const tel = AGENCE.telephone.replace(/\D/g, "").replace(/^0/, "+33");
+    lignes.push(`<a href="tel:${tel}">${AGENCE.telephone}</a>`);
+  }
+  if (AGENCE.email) lignes.push(`<a href="mailto:${AGENCE.email}">${AGENCE.email}</a>`);
+  return lignes;
+}
+
+/* <p data-coordonnees></p> */
+function poserCoordonnees() {
+  document.querySelectorAll("[data-coordonnees]").forEach((bloc) => {
+    bloc.innerHTML = lignesCoordonnees().join("");
+  });
+}
 
 const PAGES = [
   { id: "biens", titre: "Nos biens", lien: "biens.html" },
@@ -72,6 +91,7 @@ function poserPied() {
         <div>
           ${logo("logo--clair")}
           <p class="pied__texte">Agence immobilière · Paris &amp; Île-de-France</p>
+          <ul class="pied__coordonnees">${lignesCoordonnees().map((l) => `<li>${l}</li>`).join("")}</ul>
         </div>
         <div>
           <h4>Le site</h4>
@@ -408,6 +428,7 @@ poserBiens();
 poserFiche();
 poserBarres();
 poserPied();
+poserCoordonnees();
 activerVideo();
 activerGalerie();
 activerSimulateur();

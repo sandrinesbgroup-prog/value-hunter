@@ -150,6 +150,7 @@ div.entree h3 { font-size: clamp(30px, 3vw, 40px); }
 .formulaire__rang { display: grid; gap: 18px; }
 @media (min-width: 600px) { .formulaire__rang { grid-template-columns: repeat(2, 1fr); } }
 .champ { display: grid; gap: 8px; }
+.champ[hidden] { display: none; }
 .champ label, .champ legend { padding: 0; font-size: 15px; font-weight: 700; }
 .champ input, .champ textarea { width: 100%; padding: 15px 16px; border: 1px solid var(--filet); border-radius: var(--rayon); background: #fff; font: inherit; color: inherit; transition: border-color 0.2s; }
 .champ textarea { min-height: 130px; resize: vertical; }
@@ -245,3 +246,9 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .dossier-carte__liste li { position: relative; padding-left: 22px; font-size: 16px; font-weight: 600; line-height: 1.35; }
 .dossier-carte__liste li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 9px; height: 9px; border-radius: 2px; background: var(--lilas); }
 .dossier-carte .bouton { white-space: nowrap; }
+
+/* Coordonnées en tête de la page Contact */
+.coordonnees { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 0 0 clamp(28px, 3vw, 40px); padding: 18px 22px; border-radius: var(--rayon); background: var(--fond-doux); font-size: clamp(18px, 1.8vw, 22px); font-weight: 800; }
+.coordonnees:empty { display: none; }
+.coordonnees a { color: var(--nuit); transition: color 0.25s; }
+.coordonnees a:hover { color: var(--violet); }

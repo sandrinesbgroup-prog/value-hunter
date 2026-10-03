@@ -212,6 +212,7 @@ p { margin: 0; text-wrap: pretty; }
 .pied__grille { display: grid; gap: 36px; }
 @media (min-width: 820px) { .pied__grille { grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; } }
 .pied__texte { margin-top: 18px; max-width: 24em; }
+.pied .pied__coordonnees { margin-top: 18px; font-weight: 600; }
 .pied h4 { margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lilas-clair); }
 .pied ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .pied ul a { color: #fff; transition: color 0.25s; }
