@@ -192,7 +192,7 @@ function blocDpe(bien) {
         ${etiquette("energie", d.energie, "Classe énergie (DPE)")}
         ${etiquette("climat", d.climat, "Classe climat (GES)")}
       </div>
-      ${excessif}${depenses}
+      ${excessif}${depenses}${d.note ? `<p>${d.note}</p>` : ""}
     </section>`;
 }
 

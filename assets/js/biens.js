@@ -73,7 +73,7 @@ const BIENS = [
     categorie: "Immeuble de rapport",
     investisseur: true,
     type: "Immeuble",
-    titre: "Immeuble de 8 logements, 192 m²",
+    titre: "Immeuble de 8 logements, vendu en bloc",
     lieu: "Bessancourt · Val-d'Oise",
     prix: 749000,
     honoraires: { charge: "vendeur" },
@@ -81,6 +81,7 @@ const BIENS = [
     specs: ["192 m²", "8 logements", "4 niveaux"],
     accroche: "Un immeuble de rapport complet, dans un quartier pavillonnaire calme, à deux pas de la gare Transilien (ligne H vers Paris).",
     description: [
+      "Vente de l'immeuble entier, en l'état.",
       "L'immeuble est bien entretenu, sans travaux à prévoir dans les parties communes, et ses huit logements sont eux aussi en bon état.",
       "Il réunit des studios et des deux-pièces de 18 à 28 m², répartis du rez-de-chaussée au troisième étage.",
       "Vente libre ou occupée, au choix de l'acquéreur."
@@ -175,6 +176,71 @@ const BIENS = [
       photo("assets/img/medan-24.jpg", "Jardin et terrasse", 1500, 999)
     ]
   },
+  // Bessancourt : lots du programme rénové, disponibles au 1er trimestre 2027 (plaquette « Programme Bessancourt » V3).
+  // Annonces volontairement légères : loyers, rendements et financement restent dans le dossier envoyé sur demande.
+  ...[
+    [1, "studio", "Rez-de-chaussée", "19,15", "E", 109000, 420, "Rez-de-chaussée, de plain-pied."],
+    [2, "t2", "Rez-de-chaussée", "25,59", "E", 127000, 540, "Rez-de-chaussée."],
+    [3, "studio", "1er étage", "22,22", "D", 109000, 420, "Au 1er étage."],
+    [4, "t2", "1er étage", "26,14", "E", 127000, 540, "Au 1er étage."],
+    [5, "studio", "2e étage", "22,31", "D", 109000, 420, "Au 2e étage."],
+    [6, "t2", "2e étage", "26,47", "E", 127000, 540, "Au 2e étage."],
+    [7, "combles", "3e étage", "18,71", "E", 109000, 420, "Au 3e et dernier étage, sous charpente apparente."],
+    [8, "grand", "3e étage", "23,88", "E", 124000, 480, "Au 3e et dernier étage, sous charpente apparente. 27,47 m² au sol."]
+  ].map(([lot, genre, etage, surface, dpe, prix, charges, situation]) => {
+    const t2 = genre === "t2";
+    const nom = t2 ? "Deux-pièces" : genre === "grand" ? "Grand studio" : "Studio";
+    const plan = { "Rez-de-chaussée": "rdc", "1er étage": "1er", "2e étage": "2e", "3e étage": "3e" }[etage];
+    const projection = (fichier, piece, l, h) => photo(`assets/img/${fichier}.jpg`, `${piece}, projection de rénovation et d'ameublement non contractuelle`, l, h);
+    const visuels = ["combles", "grand"].includes(genre)
+      ? [projection("bes-lot-combles-3", "Pièce de vie sous charpente", 1500, 1017), projection("bes-lot-combles-1", "Coin repas sous charpente", 1500, 1026), projection("bes-lot-combles-2", "Pièce de vie", 1500, 1017)]
+      : t2
+        ? [projection("bes-lot-t2-chambre", "Chambre", 1442, 1378), projection("bes-lot-sejour", "Séjour", 1500, 844), projection("bes-lot-cuisine", "Cuisine ouverte équipée", 1500, 529)]
+        : [projection("bes-lot-sejour", "Pièce de vie", 1500, 844), projection("bes-lot-repas", "Coin repas", 1104, 1562), projection("bes-lot-cuisine", "Cuisine ouverte équipée", 1500, 529)];
+    return {
+      ref: `bessancourt-lot-${lot}`,
+      reference: `VH-003 / Lot ${lot}`,
+      categorie: "Livré rénové",
+      investisseur: true,
+      type: "Appartement",
+      titre: `${nom} rénové, ${surface} m², lot ${lot}`,
+      lieu: "Bessancourt · Val-d'Oise",
+      prix,
+      honoraires: { charge: "vendeur" },
+      specs: [`${surface} m²`, t2 ? "2 pièces" : "1 pièce", etage],
+      accroche: t2
+        ? "Un deux-pièces entièrement rénové, avec séjour et cuisine ouverte équipée, chambre séparée et salle d'eau. Disponible au premier trimestre 2027."
+        : "Un studio entièrement rénové, avec pièce de vie, cuisine ouverte équipée et salle d'eau. Disponible au premier trimestre 2027.",
+      description: [
+        `${situation} Petite copropriété en syndic bénévole, à proximité de la gare Transilien (ligne H, Paris Gare du Nord en 33 minutes environ).`,
+        "Plans, diagnostics et dossier chiffré sur demande."
+      ],
+      atouts: [
+        "Rénovation complète",
+        "Cuisine ouverte équipée",
+        "Gare Transilien ligne H à proximité",
+        "Petite copropriété, syndic bénévole"
+      ],
+      caracteristiques: [
+        ["Type", nom],
+        ["Surface", `${surface} m² Carrez`],
+        ["Pièces", t2 ? "2" : "1"],
+        ["Étage", etage],
+        ["État", "Livré rénové"],
+        ["Disponibilité", "1er trimestre 2027"],
+        ["Copropriété", "Petite copropriété, syndic bénévole"],
+        ["Charges de copropriété", `${charges} €/an (estimation)`],
+        ["Procédure en cours", "Non"]
+      ],
+      dpe: { energie: dpe, note: "DPE établi avant rénovation." },
+      photos: [
+        ...visuels,
+        projection("bes-lot-salle-eau", "Salle d'eau", 1500, 529),
+        photo(`assets/img/bes-plan-${plan}.jpg`, `Plan de l'étage avant travaux, lot ${lot}, à titre indicatif`, 1204, plan === "rdc" ? 534 : 457),
+        photo("assets/img/bes-lot-facade.jpg", "L'immeuble avant rénovation", 1058, 1403)
+      ]
+    };
+  }),
   // Rosny : annonces SeLoger de l'agence (VH-002), retirées de la diffusion car sous compromis.
   // Prix : celui affiché sur l'annonce. Honoraires : mandats n° 7 et 8, à la charge de l'acquéreur.
   {
