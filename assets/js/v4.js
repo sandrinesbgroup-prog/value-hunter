@@ -191,7 +191,7 @@ function blocDpe(bien) {
   const depenses = d.depenses ? `<p class="dpe__mention">Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
   return `
     <section class="fiche__encadre">
-      <h2>Performance énergétique${d.avant ? ' <span class="h2__precision">avant rénovation</span>' : ""}</h2>
+      <h2>Performance énergétique</h2>
       <div class="dpe">
         ${etiquette("energie", d.energie, `Classe énergie (DPE)${d.avant ? ", établie avant rénovation" : ""}`)}
         ${etiquette("climat", d.climat, "Classe climat (GES)")}
