@@ -215,6 +215,10 @@ p { margin: 0; text-wrap: pretty; }
 @media (min-width: 820px) { .pied__grille { grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; } }
 .pied__texte { margin-top: 18px; max-width: 24em; }
 .pied .pied__coordonnees { margin-top: 18px; font-weight: 600; }
+.pied__reseaux { display: flex; gap: 10px; margin-top: 18px; }
+.reseau { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--rayon); background: rgba(255, 255, 255, 0.1); color: #fff; transition: background 0.25s; }
+.reseau:hover { background: var(--violet); }
+.reseau svg { width: 18px; height: 18px; }
 .pied h4 { margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lilas-clair); }
 .pied ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .pied ul a { color: #fff; transition: color 0.25s; }
