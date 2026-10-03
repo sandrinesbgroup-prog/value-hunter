@@ -1,3 +1,2 @@
-# Adresse de test : ne pas référencer. À retirer le jour de la mise en ligne officielle.
 User-agent: *
-Disallow: /
+Allow: /
