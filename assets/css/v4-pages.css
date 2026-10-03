@@ -328,3 +328,10 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 
 /* Champ piège invisible : seuls les robots le remplissent */
 .piege { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* Confirmation d'envoi : remplace le contenu du formulaire */
+.formulaire.envoye > :not(.formulaire__merci) { display: none; }
+.formulaire__merci { display: grid; justify-items: center; gap: 6px; padding: clamp(20px, 4vw, 48px) 0; text-align: center; }
+.formulaire__coche { display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 10px; border-radius: 50%; background: var(--violet); color: #fff; font-size: 30px; font-weight: 800; }
+.formulaire__merci-titre { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; letter-spacing: -0.03em; color: var(--nuit); }
+.formulaire__merci p { margin: 0; }

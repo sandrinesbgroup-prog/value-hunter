@@ -439,22 +439,25 @@ function activerFormulaires() {
         donnees[nom] = valeur;
       });
       if (donnees["E-mail"]) donnees._replyto = donnees["E-mail"];
-      const bouton = formulaire.querySelector("button[type=submit]");
-      bouton.disabled = true;
-      retour.textContent = "Envoi en cours…";
-      retour.classList.add("visible");
+      // Confirmation affichée tout de suite ; l'envoi (2 à 4 secondes chez Google) se fait en arrière-plan.
+      retour.classList.remove("visible");
+      formulaire.querySelector(".formulaire__merci")?.remove();
+      formulaire.insertAdjacentHTML("beforeend", `<div class="formulaire__merci" role="status"><span class="formulaire__coche" aria-hidden="true">✓</span><p class="formulaire__merci-titre">Demande envoyée</p><p>Merci, votre demande a bien été transmise à Value Hunter.</p></div>`);
+      formulaire.classList.add("envoye");
+      formulaire.scrollIntoView({ block: "center", behavior: "smooth" });
       // Corps en texte simple : Google accepte la demande sans vérification préalable du navigateur.
       fetch(AGENCE.formulaires, { method: "POST", body: JSON.stringify(donnees) })
         .then((reponse) => reponse.json())
         .then((resultat) => {
           if (String(resultat.success) !== "true") throw new Error(resultat.message);
-          retour.textContent = "Merci, votre demande est bien envoyée.";
           formulaire.reset();
         })
         .catch(() => {
+          formulaire.classList.remove("envoye");
+          formulaire.querySelector(".formulaire__merci")?.remove();
           retour.innerHTML = `L'envoi n'a pas abouti. Écrivez-nous à <a href="mailto:${AGENCE.email}">${AGENCE.email}</a> ou appelez le ${AGENCE.telephone}.`;
-        })
-        .finally(() => { bouton.disabled = false; });
+          retour.classList.add("visible");
+        });
     });
   });
 }
