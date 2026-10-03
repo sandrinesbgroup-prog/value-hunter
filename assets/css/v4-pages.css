@@ -325,3 +325,6 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .section--douce .formulaire { background: #fff; border: 1px solid var(--filet); }
 .section--douce .formulaire .choix label, .section--douce .formulaire .formulaire__retour { background: var(--fond-doux); }
 .section--douce .formulaire .choix label:has(input:checked) { background: var(--violet); }
+
+/* Champ piège invisible : seuls les robots le remplissent */
+.piege { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }

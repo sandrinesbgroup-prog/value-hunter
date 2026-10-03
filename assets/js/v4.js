@@ -10,7 +10,10 @@ const AGENCE = {
   telephone: "06 19 88 53 96", // écrit « 06 12 34 56 78 » ; vide = non affiché
   // Réseaux sociaux : une adresse vide = pas de bouton. Ajouter Instagram ici le moment venu.
   linkedin: "https://www.linkedin.com/company/value-hunter/",
-  instagram: ""
+  instagram: "",
+  // Envoi des formulaires : programme Google Apps Script « Formulaires site Value Hunter » (compte sandrine@value-hunter.com),
+  // qui transmet chaque demande par e-mail à contact@value-hunter.com.
+  formulaires: "https://script.google.com/macros/s/AKfycbz80_pvsRK5dcFfsNA-I3WR908B6O3pXUIzjDMt7b-MKRNdVvoPnxLnDy_VAeW321MrLg/exec"
 };
 
 /* Boutons des réseaux sociaux (icônes simples, en ligne). */
@@ -401,8 +404,8 @@ function activerSimulateur() {
 }
 
 /* ---------- Formulaires -------------------------------------------------- */
-/* Provisoire : l'envoi prépare un e-mail dans la messagerie du visiteur,
-   adressé à AGENCE.email. À remplacer par un service d'envoi ou le CRM. */
+/* Envoi direct des demandes : le programme Google (AGENCE.formulaires) les transmet par e-mail à AGENCE.email.
+   Le visiteur n'a rien d'autre à faire que cliquer sur « Envoyer ma demande ». */
 
 function activerFormulaires() {
   // Page contact ouverte depuis une fiche : on rappelle le bien concerné.
@@ -430,14 +433,28 @@ function activerFormulaires() {
         retour.classList.add("visible");
         return;
       }
-      const lignes = [];
+      const donnees = { _subject: `[Site Value Hunter] ${formulaire.dataset.formulaire}` };
       new FormData(formulaire).forEach((valeur, nom) => {
         if (nom === "consentement" || !String(valeur).trim()) return;
-        lignes.push(`${nom} : ${valeur}`);
+        donnees[nom] = valeur;
       });
-      const objet = `[Site] ${formulaire.dataset.formulaire}`;
-      window.location.href = `mailto:${AGENCE.email}?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(lignes.join("\n"))}`;
+      if (donnees["E-mail"]) donnees._replyto = donnees["E-mail"];
+      const bouton = formulaire.querySelector("button[type=submit]");
+      bouton.disabled = true;
+      retour.textContent = "Envoi en cours…";
       retour.classList.add("visible");
+      // Corps en texte simple : Google accepte la demande sans vérification préalable du navigateur.
+      fetch(AGENCE.formulaires, { method: "POST", body: JSON.stringify(donnees) })
+        .then((reponse) => reponse.json())
+        .then((resultat) => {
+          if (String(resultat.success) !== "true") throw new Error(resultat.message);
+          retour.textContent = "Merci, votre demande est bien envoyée.";
+          formulaire.reset();
+        })
+        .catch(() => {
+          retour.innerHTML = `L'envoi n'a pas abouti. Écrivez-nous à <a href="mailto:${AGENCE.email}">${AGENCE.email}</a> ou appelez le ${AGENCE.telephone}.`;
+        })
+        .finally(() => { bouton.disabled = false; });
     });
   });
 }
