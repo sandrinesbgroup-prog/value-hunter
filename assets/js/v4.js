@@ -238,18 +238,18 @@ function poserFiche() {
               <p class="fiche__accroche">${bien.accroche}</p>
               ${bien.description.map((p) => `<p>${p}</p>`).join("")}
             </section>
-            ${blocDpe(bien)}
             <section>
               <h2>Les atouts</h2>
               <ul class="liste">${bien.atouts.map((a) => `<li>${a}</li>`).join("")}</ul>
             </section>
-            ${dossier}
             <section class="fiche__encadre">
               <h2>Caractéristiques</h2>
               <dl class="specs specs--colonnes">
                 ${bien.caracteristiques.map(([cle, valeur]) => `<div><dt>${cle}</dt><dd>${valeur}</dd></div>`).join("")}
               </dl>
             </section>
+            ${blocDpe(bien)}
+            ${dossier}
             <section>
               <p class="mention">${texteHonoraires(bien)} <a href="honoraires.html">Barème des honoraires</a>.</p>
               <p class="mention">Réf. ${bien.reference}. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : <a href="https://www.georisques.gouv.fr" rel="noopener" target="_blank">www.georisques.gouv.fr</a>. Photos et descriptif non contractuels.</p>
