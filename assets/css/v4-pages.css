@@ -248,3 +248,24 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .dossier-carte__liste li { position: relative; padding-left: 22px; font-size: 16px; font-weight: 600; line-height: 1.35; }
 .dossier-carte__liste li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 9px; height: 9px; border-radius: 2px; background: var(--lilas); }
 .dossier-carte .bouton { white-space: nowrap; }
+
+/* Bien sous compromis, honoraires et performance énergétique sur la fiche */
+.fiche__statut { display: inline-block; margin-bottom: 16px; padding: 7px 13px; border-radius: 6px; background: var(--lilas-clair); color: var(--nuit); font-size: 14px; font-weight: 800; }
+.fiche__carte .fiche__honoraires { font-size: 14px; line-height: 1.5; }
+.dpe { display: grid; gap: 12px; margin-bottom: 14px; }
+.dpe__ligne { display: flex; align-items: center; gap: 14px; font-weight: 600; }
+.dpe__lettre { display: grid; place-items: center; width: 48px; height: 48px; border-radius: var(--rayon); background: var(--fond-doux); color: var(--encre); font-size: 24px; font-weight: 800; }
+.dpe__lettre--energie-a { background: #009C6D; color: #fff; }
+.dpe__lettre--energie-b { background: #52B153; color: #fff; }
+.dpe__lettre--energie-c { background: #78BD76; color: #fff; }
+.dpe__lettre--energie-d { background: #F4E70F; }
+.dpe__lettre--energie-e { background: #F0B40F; }
+.dpe__lettre--energie-f { background: #EB8235; color: #fff; }
+.dpe__lettre--energie-g { background: #D7221F; color: #fff; }
+.dpe__lettre--climat-a { background: #F6EDFD; }
+.dpe__lettre--climat-b { background: #E4C7FA; }
+.dpe__lettre--climat-c { background: #D5AAF6; }
+.dpe__lettre--climat-d { background: #CB95F3; }
+.dpe__lettre--climat-e { background: #BA72EF; color: #fff; }
+.dpe__lettre--climat-f { background: #A74DEB; color: #fff; }
+.dpe__lettre--climat-g { background: #8D1DE8; color: #fff; }

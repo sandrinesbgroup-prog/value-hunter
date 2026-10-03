@@ -117,6 +117,7 @@ function carteBien(bien, i) {
       <div class="bien__photo">
         <img src="${p.src}" alt="${p.alt}" width="${p.largeur}" height="${p.hauteur}" loading="lazy" decoding="async">
         <span class="bien__tag">${bien.categorie}</span>
+        ${bien.statut ? `<span class="bien__statut">${bien.statut}</span>` : ""}
         <span class="bien__voir">Voir le bien</span>
       </div>
       <div class="bien__corps">
@@ -165,6 +166,36 @@ function poserBiens() {
 
 /* ---------- Fiche d'un bien (bien.html?ref=…) ---------------------------- */
 
+/* Mention des honoraires exigée dans les annonces (arrêté du 10 janvier 2017). */
+function texteHonoraires(bien) {
+  const h = bien.honoraires;
+  if (!h) return "";
+  if (h.charge !== "acquéreur") return "Honoraires à la charge du vendeur.";
+  const horsHonoraires = bien.prix - h.montant;
+  const taux = nombre((h.montant / horsHonoraires) * 100, 2);
+  return `Honoraires : ${taux} % TTC du prix hors honoraires, à la charge de l'acquéreur (${euros(h.montant)} TTC). Prix hors honoraires : ${euros(horsHonoraires)}.`;
+}
+
+/* Étiquettes énergie et climat, lisibles et en couleur (CCH, art. R126-22 à R126-24). */
+function blocDpe(bien) {
+  const d = bien.dpe;
+  if (!d) return "";
+  const etiquette = (type, classe, libelle) => classe
+    ? `<div class="dpe__ligne"><span class="dpe__lettre dpe__lettre--${type}-${classe.toLowerCase()}">${classe}</span><span>${libelle}</span></div>`
+    : `<div class="dpe__ligne"><span class="dpe__lettre">–</span><span>${libelle} : non communiqué</span></div>`;
+  const excessif = ["F", "G"].includes(d.energie) ? "<p><strong>Logement à consommation énergétique excessive.</strong></p>" : "";
+  const depenses = d.depenses ? `<p>Montant estimé des dépenses annuelles d'énergie pour un usage standard : ${d.depenses}.</p>` : "";
+  return `
+    <section>
+      <h2>Performance énergétique</h2>
+      <div class="dpe">
+        ${etiquette("energie", d.energie, "Classe énergie (DPE)")}
+        ${etiquette("climat", d.climat, "Classe climat (GES)")}
+      </div>
+      ${excessif}${depenses}
+    </section>`;
+}
+
 function poserFiche() {
   const racine = document.querySelector("[data-fiche]");
   if (!racine) return;
@@ -172,7 +203,7 @@ function poserFiche() {
   document.title = `${bien.titre}, ${bien.lieu} · Value Hunter`;
 
   const locatif = bien.locatif ? `<p class="fiche__accroche">${bien.locatif}</p>` : "";
-  const dossier = bien.investisseur
+  const dossier = bien.investisseur && !bien.statut
     ? `<section>
          <h2>Pour investir</h2>
          ${locatif}
@@ -183,9 +214,9 @@ function poserFiche() {
 
   racine.innerHTML = `
     <section class="hero hero--page hero--fiche">
-      <span class="hero__etiquette entre">${bien.categorie} · ${bien.lieu}</span>
+      <span class="hero__etiquette entre">${bien.statut ? `${bien.statut} · ` : ""}${bien.categorie} · ${bien.lieu}</span>
       <h1 class="entre">${bien.titre}</h1>
-      <p class="hero__prix entre">${euros(bien.prix)}</p>
+      <p class="hero__prix entre">${euros(bien.prix)}${bien.honoraires?.charge === "acquéreur" ? " honoraires inclus" : ""}</p>
     </section>
 
     <section class="section">
@@ -212,15 +243,21 @@ function poserFiche() {
                 ${bien.caracteristiques.map(([cle, valeur]) => `<div><dt>${cle}</dt><dd>${valeur}</dd></div>`).join("")}
               </dl>
             </section>
+            ${blocDpe(bien)}
             <section>
+              <p class="mention">${texteHonoraires(bien)} <a href="honoraires.html">Barème des honoraires</a>.</p>
               <p class="mention">Réf. ${bien.reference}. Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : <a href="https://www.georisques.gouv.fr" rel="noopener" target="_blank">www.georisques.gouv.fr</a>. Photos et descriptif non contractuels.</p>
             </section>
           </div>
           <aside class="fiche__carte">
+            ${bien.statut ? `<span class="fiche__statut">${bien.statut}</span>` : ""}
             <strong>${euros(bien.prix)}</strong>
+            ${texteHonoraires(bien) ? `<p class="fiche__honoraires">${texteHonoraires(bien)}</p>` : ""}
             <p>${bien.specs.join(" · ")}</p>
-            <a class="bouton bouton--blanc" href="contact.html?bien=${bien.ref}">Demander une visite</a>
-            ${bien.investisseur ? `<a class="bouton bouton--contour" href="contact.html?bien=${bien.ref}&amp;projet=Investir&amp;dossier=1">Demander le dossier</a>` : ""}
+            ${bien.statut
+              ? `<a class="bouton bouton--blanc" href="contact.html">Nous contacter</a>`
+              : `<a class="bouton bouton--blanc" href="contact.html?bien=${bien.ref}">Demander une visite</a>
+                 ${bien.investisseur ? `<a class="bouton bouton--contour" href="contact.html?bien=${bien.ref}&amp;projet=Investir&amp;dossier=1">Demander le dossier</a>` : ""}`}
           </aside>
         </div>
       </div>
