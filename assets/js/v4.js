@@ -439,6 +439,9 @@ function activerFormulaires() {
         donnees[nom] = valeur;
       });
       if (donnees["E-mail"]) donnees._replyto = donnees["E-mail"];
+      // Objet unique (nom, projet, date et heure) : Gmail n'empile pas les demandes dans une même conversation.
+      const quand = new Date().toLocaleString("fr-FR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+      donnees._subject = [`[Site Value Hunter] ${formulaire.dataset.formulaire}`, donnees.Nom, donnees["Votre projet"] || donnees["Type de bien"], quand].filter(Boolean).join(" · ");
       // Confirmation affichée tout de suite ; l'envoi (2 à 4 secondes chez Google) se fait en arrière-plan.
       retour.classList.remove("visible");
       formulaire.querySelector(".formulaire__merci")?.remove();
