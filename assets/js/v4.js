@@ -10,7 +10,7 @@ const AGENCE = {
   telephone: "06 19 88 53 96", // écrit « 06 12 34 56 78 » ; vide = non affiché
   // Réseaux sociaux : une adresse vide = pas de bouton. Ajouter Instagram ici le moment venu.
   linkedin: "https://www.linkedin.com/company/value-hunter/",
-  instagram: "",
+  instagram: "https://www.instagram.com/valuehunter.immo/",
   // Envoi des formulaires : programme Google Apps Script « Formulaires site Value Hunter » (compte sandrine@value-hunter.com),
   // qui transmet chaque demande par e-mail à contact@value-hunter.com.
   formulaires: "https://script.google.com/macros/s/AKfycbz80_pvsRK5dcFfsNA-I3WR908B6O3pXUIzjDMt7b-MKRNdVvoPnxLnDy_VAeW321MrLg/exec"
