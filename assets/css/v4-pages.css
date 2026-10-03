@@ -166,6 +166,8 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .formulaire button.bouton { justify-self: start; border: 0; cursor: pointer; }
 .formulaire__retour { display: none; padding: 14px 16px; border-radius: var(--rayon); background: var(--fond-doux); font-size: 15px; font-weight: 500; }
 .formulaire__retour.visible { display: block; }
+.formulaire__mention { margin: -4px 0 0; font-size: 14px; line-height: 1.5; color: var(--gris); }
+.formulaire__mention a { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Fiche d'un bien */
 .mosaique { position: relative; display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, clamp(140px, 19vw, 270px)); }
