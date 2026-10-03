@@ -11,9 +11,9 @@
   <meta property="og:description" content="Des biens rénovés, prêts à louer, et des immeubles de rapport en Île-de-France, présentés avec leurs chiffres.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/polices.css?v=202610031310">
-  <link rel="stylesheet" href="assets/css/v4.css?v=202610031310">
-  <link rel="stylesheet" href="assets/css/v4-pages.css?v=202610031310">
+  <link rel="stylesheet" href="assets/css/polices.css?v=202610031313">
+  <link rel="stylesheet" href="assets/css/v4.css?v=202610031313">
+  <link rel="stylesheet" href="assets/css/v4-pages.css?v=202610031313">
   <script>document.documentElement.classList.add("avec-js")</script>
 </head>
 <body data-page="investir">
@@ -30,8 +30,18 @@
     </div>
   </section>
 
-  <!-- Le dossier investisseur, en encadré compact juste sous le bandeau : visible dès l'arrivée -->
-  <section class="section section--chevauche" id="dossier">
+  <section class="section section--chevauche" id="biens">
+    <div class="conteneur">
+      <div class="tete revele">
+        <h2>Biens pour investir</h2>
+        <a class="bouton bouton--violet" href="biens.html?filtre=investisseur">Tous les biens</a>
+      </div>
+      <div class="biens" data-biens data-investisseur></div>
+    </div>
+  </section>
+
+  <!-- Le dossier investisseur, en complément, après les biens -->
+  <section class="section section--serree" id="dossier">
     <div class="conteneur">
       <div class="dossier-carte revele">
         <div class="dossier-carte__tete">
@@ -48,16 +58,6 @@
         </ul>
         <a class="bouton bouton--blanc bouton--grand" href="contact.html?projet=Investir&amp;dossier=1">Demander le dossier</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section section--serree" id="biens">
-    <div class="conteneur">
-      <div class="tete revele">
-        <h2>Biens pour investir</h2>
-        <a class="bouton bouton--violet" href="biens.html?filtre=investisseur">Tous les biens</a>
-      </div>
-      <div class="biens" data-biens data-investisseur></div>
     </div>
   </section>
 
@@ -89,7 +89,7 @@
   </section>
 </main>
 
-<script src="assets/js/biens.js?v=202610031310"></script>
-<script src="assets/js/v4.js?v=202610031310"></script>
+<script src="assets/js/biens.js?v=202610031313"></script>
+<script src="assets/js/v4.js?v=202610031313"></script>
 </body>
 </html>
