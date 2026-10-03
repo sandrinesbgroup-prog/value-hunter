@@ -335,3 +335,15 @@ fieldset.champ { border: 0; margin: 0; min-width: 0; }
 .formulaire__coche { display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 10px; border-radius: 50%; background: var(--violet); color: #fff; font-size: 30px; font-weight: 800; }
 .formulaire__merci-titre { font-size: clamp(24px, 2.4vw, 30px); font-weight: 800; letter-spacing: -0.03em; color: var(--nuit); }
 .formulaire__merci p { margin: 0; }
+
+/* Formulaires resserrés : tiennent sur un écran sans défiler */
+.formulaire { gap: 12px; padding: clamp(20px, 2.6vw, 32px); }
+.formulaire .formulaire__rang { gap: 12px; }
+.formulaire .champ { gap: 5px; }
+.formulaire .champ label, .formulaire .champ legend { font-size: 14px; }
+.formulaire .champ input, .formulaire .champ textarea { padding: 10px 14px; font-size: 16px; }
+.formulaire .champ textarea { min-height: 84px; }
+.formulaire .choix label { padding: 8px 16px; font-size: 15px; }
+.formulaire .consentement { font-size: 14px; }
+.formulaire .formulaire__mention { font-size: 13px; }
+.formulaire button.bouton { padding-top: 14px; padding-bottom: 14px; }
