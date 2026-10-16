@@ -67,50 +67,6 @@ const BIENS = [
       photo("assets/img/paris17-7.jpg", "Plans du projet", 1392, 1176)
     ]
   },
-  {
-    ref: "immeuble-bessancourt",
-    reference: "VH-03",
-    categorie: "Immeuble de rapport",
-    investisseur: true,
-    type: "Immeuble",
-    titre: "Immeuble de 8 logements, vendu en bloc",
-    lieu: "Bessancourt · Val-d'Oise",
-    prix: 749000,
-    honoraires: { charge: "vendeur" },
-    locatif: "Potentiel locatif estimé : environ 58 000 € bruts par an", // libellé de l'annonce publique
-    specs: ["192 m²", "8 logements", "4 niveaux"],
-    accroche: "Un immeuble de rapport complet, dans un quartier pavillonnaire calme, à deux pas de la gare Transilien (ligne H vers Paris).",
-    description: [
-      "Vente de l'immeuble entier, en l'état.",
-      "L'immeuble est bien entretenu, sans travaux à prévoir dans les parties communes, et ses huit logements sont eux aussi en bon état.",
-      "Il réunit des studios et des deux-pièces de 18 à 28 m², répartis du rez-de-chaussée au troisième étage.",
-      "Vente libre ou occupée, au choix de l'acquéreur."
-    ],
-    atouts: [
-      "Immeuble entier",
-      "Parties communes sans travaux à prévoir",
-      "Gare Transilien ligne H à proximité",
-      "Vente libre ou occupée"
-    ],
-    caracteristiques: [
-      ["Type", "Immeuble de rapport"],
-      ["Surface", "192 m²"],
-      ["Logements", "8"],
-      ["Niveaux", "Rez-de-chaussée + 3"],
-      ["Construction", "1900"]
-    ],
-    dpe: { energie: "E", climat: "E", depenses: "entre 3 500 € et 4 000 € par an" },
-    photos: [
-      photo("assets/img/bessancourt-1.jpg", "Façade de l'immeuble"),
-      photo("assets/img/bessancourt-2.jpg", "Séjour sous combles avec poutres apparentes"),
-      photo("assets/img/bessancourt-3.jpg", "Escalier vu depuis le rez-de-chaussée", 1080, 1440),
-      photo("assets/img/bessancourt-4.jpg", "Vue depuis les étages"),
-      photo("assets/img/bessancourt-5.jpg", "Pièce de vie avec cuisine"),
-      photo("assets/img/bessancourt-6.jpg", "Studio"),
-      photo("assets/img/bessancourt-7.jpg", "Cuisine"),
-      photo("assets/img/bessancourt-8.jpg", "Cage d'escalier", 1080, 1440)
-    ]
-  },
   // Médan : annonce SeLoger de l'agence (VH-001), mandat n° 1.
   {
     ref: "maison-medan",
