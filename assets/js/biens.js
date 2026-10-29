@@ -82,52 +82,6 @@ const BIENS = [
       photo("assets/img/lilas-16.jpg", "Cuisine, projection d'aménagement non contractuelle", 1440, 1080)
     ]
   },
-  {
-    ref: "maison-paris-17",
-    reference: "VH-005",
-    categorie: "À rénover",
-    investisseur: false,
-    type: "Maison de ville",
-    titre: "Maison de ville à rénover, 91 m²",
-    lieu: "Paris 17e · Batignolles",
-    prix: 624000,
-    honoraires: { charge: "vendeur" },
-    specs: ["91 m²", "5 pièces", "3 chambres"],
-    accroche: "À deux pas des Batignolles, au calme d'une cour intérieure : une maison indépendante à repenser entièrement, avec un accès privatif.",
-    description: [
-      "Le rez-de-chaussée développe environ 50 m² et permet d'imaginer une pièce de vie — cuisine ouverte ou séparée, salle à manger, salon — ainsi qu'une première chambre.",
-      "À l'étage, la réunion du premier niveau et des combles créerait environ 40 m² supplémentaires, sous une hauteur pouvant dépasser 3,50 mètres au faîtage, éclairés par quatre fenêtres de toit dont l'installation a déjà reçu l'accord de la copropriété.",
-      "Le vendeur s'engage à obtenir les autorisations d'urbanisme et de copropriété nécessaires à la transformation. Un projet d'architecte peut être mis à votre disposition."
-    ],
-    atouts: [
-      "Maison indépendante, accès privatif depuis la cour",
-      "Toiture de la maison et de l'immeuble entièrement refaite",
-      "Déclaration préalable déposée par un architecte",
-      "Plus de 3,50 m de hauteur sous plafond à l'étage",
-      "Au calme, à l'abri des regards"
-    ],
-    caracteristiques: [
-      ["Type", "Maison de ville"],
-      ["Surface", "90,5 m² après projet"],
-      ["Pièces", "5"],
-      ["Chambres", "3"],
-      ["État", "À rénover"],
-      ["Construction", "1850"],
-      ["Exposition", "Est"],
-      ["Copropriété", "12 lots"],
-      ["Charges de copropriété", "2 400 €/an"],
-      ["Procédure en cours", "Non"]
-    ],
-    photos: [
-      photo("assets/img/paris17-1.jpg", "Maison de ville vue depuis la cour"),
-      photo("assets/img/paris17-2.jpg", "Façade latérale et porte d'entrée", 1440, 958),
-      photo("assets/img/paris17-3.jpg", "Cour intérieure de la copropriété", 1440, 960),
-      photo("assets/img/paris17-4.jpg", "Rez-de-chaussée dans son état actuel"),
-      photo("assets/img/paris17-5.jpg", "Projection d'aménagement du séjour, image non contractuelle", 1440, 960),
-      photo("assets/img/paris17-6.jpg", "Projection d'aménagement de la salle à manger, image non contractuelle", 1440, 960),
-      photo("assets/img/paris17-7.jpg", "Plans du projet", 1392, 1176)
-    ]
-  },
   // Médan : annonce SeLoger de l'agence (VH-001), mandat n° 1.
   {
     ref: "maison-medan",
