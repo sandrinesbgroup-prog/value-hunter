@@ -21,6 +21,67 @@
 const photo = (src, alt, largeur = 1440, hauteur = 1080) => ({ src, alt, largeur, hauteur });
 
 const BIENS = [
+  // Les Lilas : annonce SeLoger de l'agence (VH-013, SeLoger 283967287), publiée par Jean-Baptiste fin octobre 2026.
+  {
+    ref: "lilas-t3",
+    reference: "VH-013",
+    categorie: "À rénover",
+    investisseur: false,
+    type: "Appartement",
+    titre: "Trois-pièces traversant à rénover, 70 m²",
+    lieu: "Les Lilas · Seine-Saint-Denis",
+    prix: 399000,
+    honoraires: { charge: "vendeur" },
+    specs: ["70 m²", "3 pièces", "2 chambres"],
+    accroche: "À 200 mètres du métro Mairie des Lilas (ligne 11), un trois-pièces traversant au 3e étage avec ascenseur, dans une copropriété de 1900 calme et bien entretenue.",
+    description: [
+      "Traversant et exposé est-ouest, l'appartement bénéficie d'une belle luminosité tout au long de la journée. Il se compose d'une entrée, d'un séjour, d'une cuisine indépendante, de deux grandes chambres avec placards, d'une salle d'eau et de toilettes séparées. Une cave complète ce bien.",
+      "À rénover selon vos envies, il offre un beau potentiel d'aménagement. La cuisine pourra être conservée indépendante ou ouverte sur le séjour pour créer un espace de vie généreux, comme le suggèrent les projections d'aménagement présentées.",
+      "À proximité immédiate des commerces et des écoles, et à trois minutes à pied du métro."
+    ],
+    atouts: [
+      "Traversant, exposé est-ouest",
+      "3e étage avec ascenseur",
+      "Métro Mairie des Lilas (ligne 11) à 200 m",
+      "Deux grandes chambres avec placards",
+      "Cave"
+    ],
+    caracteristiques: [
+      ["Type", "Appartement"],
+      ["Surface", "70 m²"],
+      ["Pièces", "3"],
+      ["Chambres", "2"],
+      ["Étage", "3e sur 5, avec ascenseur"],
+      ["État", "À rénover"],
+      ["Construction", "1900"],
+      ["Exposition", "Est / Ouest"],
+      ["Cuisine", "Indépendante"],
+      ["Chauffage", "Électrique, radiateurs"],
+      ["Cave", "Oui"],
+      ["Copropriété", "23 lots"],
+      ["Charges de copropriété", "2 640 €/an"],
+      ["Procédure en cours", "Non"]
+    ],
+    dpe: { energie: "C", climat: "A" },
+    photos: [
+      photo("assets/img/lilas-01.jpg", "Séjour avec cuisine ouverte, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-02.jpg", "Séjour avec cuisine ouverte, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-03.jpg", "Séjour dans son état actuel", 1440, 1080),
+      photo("assets/img/lilas-04.jpg", "Séjour", 1440, 1080),
+      photo("assets/img/lilas-05.jpg", "Séjour", 1440, 1080),
+      photo("assets/img/lilas-06.jpg", "Coin repas", 1440, 1080),
+      photo("assets/img/lilas-07.jpg", "Chambre et placards", 1440, 1080),
+      photo("assets/img/lilas-08.jpg", "Chambre", 1440, 1080),
+      photo("assets/img/lilas-09.jpg", "Salle d'eau", 1440, 1080),
+      photo("assets/img/lilas-10.jpg", "Cuisine indépendante", 1440, 1080),
+      photo("assets/img/lilas-11.jpg", "Cour de l'immeuble", 1080, 1440),
+      photo("assets/img/lilas-12.jpg", "Chambre, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-13.jpg", "Chambre, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-14.jpg", "Chambre, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-15.jpg", "Chambre aménagée en bureau, projection d'aménagement non contractuelle", 1440, 1080),
+      photo("assets/img/lilas-16.jpg", "Cuisine, projection d'aménagement non contractuelle", 1440, 1080)
+    ]
+  },
   {
     ref: "maison-paris-17",
     reference: "VH-005",
